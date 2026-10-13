@@ -601,6 +601,147 @@
    },
    "decreto": "Decreto 1011 de 2026, Alcaldía de Itagüí, segundo semestre de 2026 (misma rotación que Medellín)",
    "fuente": "itagui_decreto_1011_2026"
+  },
+  {
+   "slug": "santa-marta",
+   "nombre": "Santa Marta",
+   "depto": "Magdalena",
+   "carro": {
+    "esquema": "semana",
+    "periodos": [
+     {
+      "desde": "2026-05-08",
+      "hasta": "2026-11-07",
+      "semana": {
+       "1": [
+        1,
+        2
+       ],
+       "2": [
+        3,
+        4
+       ],
+       "3": [
+        5,
+        6
+       ],
+       "4": [
+        7,
+        8
+       ],
+       "5": [
+        9,
+        0
+       ]
+      }
+     }
+    ],
+    "horas": [
+     [
+      "07:00",
+      "09:00"
+     ],
+     [
+      "11:30",
+      "14:00"
+     ],
+     [
+      "17:00",
+      "20:00"
+     ]
+    ],
+    "sabado": false,
+    "festivos": false,
+    "digito": "ultimo"
+   },
+   "motos": null,
+   "motosNota": "El decreto vigente regula automóviles, camperos, camionetas y microbuses; no trata las motos.",
+   "vigencia": {
+    "desde": "2026-05-08",
+    "hasta": "2026-11-07"
+   },
+   "decreto": "Decreto 213 del 8 de mayo de 2026, Alcaldía de Santa Marta (seis meses desde su publicación)",
+   "nota": "Horario de los carros matriculados en Santa Marta; los matriculados en otra ciudad tienen restricción de 7:00 a. m. a 8:00 p. m. continuo.",
+   "fuente": "smr_decreto_213_2026"
+  },
+  {
+   "slug": "villavicencio",
+   "nombre": "Villavicencio",
+   "depto": "Meta",
+   "carro": {
+    "esquema": "semana",
+    "periodos": [
+     {
+      "desde": "2026-01-26",
+      "hasta": "2026-12-22",
+      "semana": {
+       "1": [
+        5,
+        6
+       ],
+       "2": [
+        7,
+        8
+       ],
+       "3": [
+        9,
+        0
+       ],
+       "4": [
+        1,
+        2
+       ],
+       "5": [
+        3,
+        4
+       ]
+      }
+     }
+    ],
+    "horas": [
+     [
+      "06:30",
+      "09:30"
+     ],
+     [
+      "17:00",
+      "20:00"
+     ]
+    ],
+    "sabado": false,
+    "festivos": false,
+    "digito": "ultimo"
+   },
+   "motos": null,
+   "motosNota": "La página oficial del pico y placa 2026 no fija régimen para motos.",
+   "vigencia": {
+    "desde": "2026-01-26",
+    "hasta": "2026-12-22"
+   },
+   "decreto": "Decreto 015 de 2026, Alcaldía de Villavicencio (26 de enero al 22 de diciembre de 2026)",
+   "nota": "Rige dentro del polígono del centro; se puede circular por las vías que lo bordean.",
+   "fuente": "vvc_decreto_015_2026"
+  },
+  {
+   "slug": "manizales",
+   "nombre": "Manizales",
+   "depto": "Caldas",
+   "carro": {
+    "esquema": "ninguno",
+    "periodos": [],
+    "horas": [],
+    "sabado": false,
+    "festivos": false,
+    "digito": "ultimo"
+   },
+   "motos": null,
+   "motosNota": "Sin pico y placa para motos.",
+   "vigencia": {
+    "desde": "2026-09-16",
+    "hasta": "2026-12-31"
+   },
+   "decreto": "Sin pico y placa para particulares desde el 16 de septiembre de 2026, cuando se levantó la medida temporal del Decreto Extraordinario 012 de 2026",
+   "fuente": "mzl_levanta_2026"
   }
  ]
 }

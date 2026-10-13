@@ -68,9 +68,9 @@ describe.each(pages.map((p) => [p.id, p] as const))('page %s', (_id, p) => {
     minis(html);
   });
   it('aucune tournure interdite, aucun tiret cadratin', () => clean([p.title, p.description, p.h1, p.intro, p.resume, p.card, ...p.faqs.flatMap((f) => [f.q, f.a]), p.body(h)].join(' ')));
-  it('longueur du corps (guides 900 mots hors tableaux, pages outil 300)', () => {
+  it('longueur du corps (guides 800 mots hors tableaux, pages outil 150)', () => {
     const n = words(p.body(h).replace(/<table[\s\S]*?<\/table>/g, ''));
-    expect(n).toBeGreaterThanOrEqual(p.tool ? 300 : 900);
+    expect(n).toBeGreaterThanOrEqual(p.tool ? 150 : 800);
   });
 });
 

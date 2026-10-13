@@ -193,7 +193,8 @@
         "holo1": "non",
         "color": "rosa"
       },
-      "_fuente": "pcaa_2019 (Tablas 1 a 4, VII, XII) ; came_2026_09_12"
+      "_fuente": "pcaa_2019 (Tablas 1 a 4, VII, XII) ; came_2026_09_12",
+      "preventiva_particulas": 135
     },
     "pase": {
       "dias14": 1,
@@ -208,7 +209,8 @@
       "0": {
         "modeloDesde": 2006,
         "vigenciaMeses": 6,
-        "dieselDesde": 2012
+        "dieselDesde": 2012,
+        "estandarAHasta": 2009
       },
       "1": {
         "modeloDesde": 1994,
@@ -221,7 +223,12 @@
         "hibridoAnios": 6
       },
       "_fuente": "verif_2s2026 (4.8, 8.3 a 8.7, 14.1 XI y XII)"
-    }
+    },
+    "autoNuevo": {
+      "diasLibres": 30,
+      "plazoVerifDias": 180
+    },
+    "multaExtemporaneaVigenciaDias": 30
   },
   "sources": {
     "hnc_decreto": {
@@ -379,6 +386,18 @@
     "ley_51_1983": {
       "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=4954",
       "label": "Ley 51 de 1983 (Ley Emiliani): días festivos y traslado al lunes (Función Pública)"
+    },
+    "smr_decreto_213_2026": {
+      "url": "https://www.santamarta.gov.co/sites/default/files/decretos_no._213_del_08_de_mayo_de_2026.pdf",
+      "label": "Alcaldía de Santa Marta, Decreto 213 del 8 de mayo de 2026: restricción de circulación de vehículos particulares"
+    },
+    "vvc_decreto_015_2026": {
+      "url": "https://villavicencio.gov.co/con-jornadas-pedagogicas-inicio-el-pico-y-placa-2026-para-vehiculos-particulares-en-villavicencio/",
+      "label": "Alcaldía de Villavicencio, enero de 2026: pico y placa 2026 para particulares (Decreto 015 de 2026)"
+    },
+    "mzl_levanta_2026": {
+      "url": "https://centrodeinformacion.manizales.gov.co/manizales-levanta-el-pico-y-placa-temporal-desde-este-miercoles-16-de-septiembre/",
+      "label": "Alcaldía de Manizales, septiembre de 2026: se levanta el pico y placa temporal desde el 16 de septiembre"
     }
   },
   "co": {

@@ -12,7 +12,7 @@ import { fechaDia, digits, fecha as fmtFecha } from '../../lib/fmt';
 import { readParams, str, num, updateURL } from '../../lib/url-state';
 
 declare const __BUILD_DAY__: string;
-interface Props { ciudades: Ciudad[]; festivos: string[]; city?: string; lockCity?: boolean; vehiculo?: Vehiculo; methodHref: string; calHref?: string; idPrefix?: string }
+interface Props { ciudades: Ciudad[]; festivos: string[]; city?: string; lockCity?: boolean; vehiculo?: Vehiculo; methodHref: string; calHref?: string; idPrefix?: string; manana?: boolean }
 
 const horasTxt = (h: Array<[string, string]>) => h.map(([a, b]) => `${hh(a)} a ${hh(b)}`).join(' y ');
 function hh(t: string) { const [H, M] = t.split(':').map(Number); const ap = H < 12 ? 'a. m.' : H === 12 ? 'm.' : 'p. m.'; const h12 = H % 12 === 0 ? 12 : H % 12; return `${h12}:${String(M).padStart(2, '0')} ${ap}`; }
@@ -28,11 +28,12 @@ export function estadoTxt(r: ResultadoDia): [string, Tone] {
   }
 }
 
-export default function PypTool({ ciudades, festivos, city = 'bogota', lockCity = false, vehiculo: v0 = 'carro', methodHref, calHref, idPrefix = 'pyp' }: Props) {
+export default function PypTool({ ciudades, festivos, city = 'bogota', lockCity = false, vehiculo: v0 = 'carro', methodHref, calHref, idPrefix = 'pyp', manana = false }: Props) {
   const [slug, setSlug] = useState(city);
   const [digit, setDigit] = useState(4);
   const [veh, setVeh] = useState<Vehiculo>(v0);
-  const [hoy, setHoy] = useState(__BUILD_DAY__);
+  const [hoy0, setHoy] = useState(__BUILD_DAY__);
+  const hoy = manana ? addDays(hoy0, 1) : hoy0;
   useEffect(() => {
     const u = readParams(window.location.search);
     if (!lockCity) setSlug(str(u, 'ciudad', city));
@@ -52,12 +53,12 @@ export default function PypTool({ ciudades, festivos, city = 'bogota', lockCity 
   const [v, tone] = estadoTxt(r.d0);
   const regla = vehic === 'moto' ? c.motos : c.carro;
   const rows: Array<[string, string]> = [
-    [`Mañana, ${fechaDia(addDays(hoy, 1))}`, estadoTxt(r.d1)[0]],
+    [`${manana ? 'Pasado mañana' : 'Mañana'}, ${fechaDia(addDays(hoy, 1))}`, estadoTxt(r.d1)[0]],
     ['Próximo día con pico y placa', r.next ? fechaDia(r.next.fecha) : 'sin fecha publicada'],
   ];
-  if (r.d0.restringidos.length) rows.push([`Placas restringidas hoy en ${c.nombre}`, digits(r.d0.restringidos)]);
+  if (r.d0.restringidos.length) rows.push([`Placas restringidas ${manana ? 'mañana' : 'hoy'} en ${c.nombre}`, digits(r.d0.restringidos)]);
   if (regla && regla.esquema !== 'ninguno') rows.push(['Horario', horasTxt(regla.horas)]);
-  const sub = r.d0.estado === 'restringido' ? `Hoy ${fechaDia(hoy)}, de ${horasTxt(r.d0.horas)}.` : r.d0.estado === 'sin-datos' ? `La alcaldía no ha publicado la rotación para el ${fmtFecha(hoy)}: consulta el decreto nuevo.` : `Hoy ${fechaDia(hoy)} en ${c.nombre}.`;
+  const sub = r.d0.estado === 'restringido' ? `${manana ? 'Mañana' : 'Hoy'} ${fechaDia(hoy)}, de ${horasTxt(r.d0.horas)}.` : r.d0.estado === 'sin-datos' ? `La alcaldía no ha publicado la rotación para el ${fmtFecha(hoy)}: consulta el decreto nuevo.` : `${manana ? 'Mañana' : 'Hoy'} ${fechaDia(hoy)} en ${c.nombre}.`;
   const opts = ciudades.map((x) => ({ value: x.slug, label: x.nombre }));
   const digLabel = vehic === 'moto' && c.motos?.digito === 'primero' ? 'Primer número de la placa' : 'Último número de la placa';
   return (
@@ -68,8 +69,9 @@ export default function PypTool({ ciudades, festivos, city = 'bogota', lockCity 
         {c.motos ? <Toggle id={`${idPrefix}-veh`} label="Vehículo" value={vehic} onChange={(x) => setVeh(x as Vehiculo)} options={[{ value: 'carro', label: 'Carro' }, { value: 'moto', label: 'Moto' }]} /> : <LockedField label="Vehículo" value="Carro particular" help={c.motosNota} />}
         <LockedField label="Norma aplicada" value={c.decreto.split(' (')[0]} help={`Datos comprobados hasta el ${fmtFecha(c.vigencia.hasta)}`} />
       </form>
-      <Verdict label={`Hoy en ${c.nombre}, placa ${vehic === 'moto' ? 'de moto ' : ''}${digit}`} value={v} tone={tone} sub={sub} methodHref={methodHref} note={`${c.decreto}.`}>
+      <Verdict label={`${manana ? 'Mañana' : 'Hoy'} en ${c.nombre}, placa ${vehic === 'moto' ? 'de moto ' : ''}${digit}`} value={v} tone={tone} sub={sub} methodHref={methodHref} note={`${c.decreto}.`}>
         <Rows rows={rows} />
+        {c.nota && <p className="mt-2 text-sm text-navy-800">{c.nota}</p>}
         {calHref && <p className="mt-2 text-sm"><a className="font-medium text-accent-700 underline" href={calHref}>Ver el calendario del mes</a></p>}
       </Verdict>
     </div>

@@ -20,5 +20,5 @@ const mx = { hnc: MX.hnc };
 {kind === 'hnc' && <HncTool client:load p={mx} holo={holo as Holo | undefined} digit={digit} manana={manana} methodHref={methodHref} calHref={calMx} contHref={contHref} idPrefix={idPrefix} />}
 {kind === 'hnc-cal' && <CalendarioMes client:load modo="mx" p={mx} holo={holo as Holo | undefined} methodHref={methodHref} idPrefix={idPrefix} />}
 {kind === 'verif' && <VerifTool client:load p={mx} v={VERIF} digit={digit} methodHref={methodHref} idPrefix={idPrefix} />}
-{kind === 'pyp' && <PypTool client:load ciudades={lockCity ? CIUDADES.filter((c) => c.slug === city) : CIUDADES} festivos={FESTIVOS} city={city} lockCity={lockCity} vehiculo={vehiculo} methodHref={methodHref} calHref={calCo} idPrefix={idPrefix} />}
+{kind === 'pyp' && <PypTool client:load ciudades={lockCity ? CIUDADES.filter((c) => c.slug === city) : CIUDADES} festivos={FESTIVOS} city={city} lockCity={lockCity} vehiculo={vehiculo} manana={manana} methodHref={methodHref} calHref={calCo} idPrefix={idPrefix} />}
 {kind === 'pyp-cal' && <CalendarioMes client:load modo="co" ciudades={lockCity ? CIUDADES.filter((c) => c.slug === city) : CIUDADES} festivos={FESTIVOS} city={city} lockCity={lockCity} methodHref={methodHref} idPrefix={idPrefix} />}
