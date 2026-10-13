@@ -1,0 +1,13 @@
+{
+ "accent": "#0B5D47",
+ "symbol": "PC",
+ "variants": [
+  {
+   "file": "og-es.png",
+   "title": "¿Puedo circular hoy?\nHoy No Circula y pico y placa",
+   "subtitle": "Placa, holograma y ciudad · calendario del mes",
+   "badge": "Reglas vigentes 2026",
+   "brand": "¿Puedo circular hoy?"
+  }
+ ]
+}

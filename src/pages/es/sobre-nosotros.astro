@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { LAST_UPDATED, AUTHOR_NAME, CONTACT_EMAIL, AUTHOR_ROLE, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { personSchema, organizationSchema, breadcrumbSchema, profilePageSchema } from '../../lib/seo';
+import { CIUDADES, fecha } from '../../lib/kit';
+const lang = 'es';
+const n = CIUDADES.filter((c) => c.carro.esquema !== 'ninguno').length;
+---
+<PageLayout title="Radif Partners y ¿Puedo circular hoy?: fuentes y errores 2026" description="Quién publica la herramienta de Hoy No Circula y pico y placa, qué gacetas y decretos de 2026 la alimentan, cómo se financia y cómo avisarnos de un error o de un decreto nuevo." lang={lang} jsonLd={[personSchema(lang), organizationSchema(lang), profilePageSchema({ path: route('about', lang), lang }), breadcrumbSchema([{ name: 'Inicio', path: route('home', lang) }, { name: 'Sobre nosotros', path: route('about', lang) }])]} breadcrumbs={[{ label: 'Sobre nosotros' }]}>
+  <header class="mb-6"><h1 class="font-serif text-3xl font-bold text-navy-900 md:text-4xl">Sobre {SITE_NAMES[lang]}</h1></header>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <div class="not-prose mb-6"><p class="text-lg font-semibold text-navy-900">{AUTHOR_NAME}</p><p class="text-navy-700">{AUTHOR_ROLE[lang]}</p></div>
+    <p>{SITE_NAMES[lang]} lo publica Radif Partners, una pequeña empresa que construye herramientas gratuitas sobre reglas oficiales. Esta responde a la pregunta que millones de conductores se hacen cada mañana en el Valle de México y en las ciudades de Colombia antes de sacar el auto: ¿me toca descansar hoy? La respuesta existe, pero está repartida entre una Gaceta de 2014, un programa de verificación que cambia cada semestre, los comunicados de la Comisión Ambiental de la Megalópolis y un decreto distinto en cada alcaldía colombiana.</p>
+    <h2>Por qué este sitio responde mejor que el primer resultado de Google</h2>
+    <p>Lo que suele salir primero al buscar «hoy no circula» o «pico y placa hoy» es una nota de prensa escrita para un solo día, o una herramienta que no dice con qué decreto calcula ni hasta cuándo vale la rotación. Aquí la respuesta sale de un motor que aplica a tu placa el texto oficial vigente, citado con su número y su fecha, con el calendario del mes y la respuesta para mañana. Cubre la Ciudad de México y la zona conurbada y {n} ciudades colombianas con regla vigente, y cuando una rotación termina sin que la alcaldía publique la siguiente, lo dice en lugar de suponerla.</p>
+    <h2>Lo que no hacemos</h2>
+    <p>No somos una autoridad: no tramitamos el Pase Turístico, la excepción de pico y placa, el Pico y Placa Solidario ni la verificación, y no anulamos multas. No pedimos nombre, correo ni teléfono, no guardamos tu placa y no te mandamos a gestores, verificentros ni aseguradoras a cambio de una comisión. La contingencia ambiental no la adivinamos: explicamos qué cambia en cada fase y enlazamos el comunicado oficial.</p>
+    <h2>Cómo se producen las respuestas</h2>
+    <p>Las reglas viven en dos archivos de parámetros, uno para México y otro para las ciudades colombianas, con la fuente de cada valor. El cálculo corre en tu navegador. Antes de cada publicación, pruebas automáticas comparan el motor con los casos que publican las propias autoridades: el calendario de octubre de 2026 de la Alcaldía de Bogotá, la tabla del Decreto 1490 de 2026 de Medellín, la contingencia del 13 de septiembre de 2026 en la Ciudad de México. El detalle y los límites están en <a href={route('method', lang)}>cómo calculamos</a>.</p>
+    <h2>Financiamiento</h2>
+    <p>El sitio es gratuito y no requiere cuenta. Si algún día se añade publicidad, nunca irá encima de la herramienta ni usará lo que eliges, porque esos datos no salen de tu navegador.</p>
+    <h2>Avisar de un error o de un decreto nuevo</h2>
+    <p>Si tu alcaldía publicó una rotación nueva o un agente te dijo otra cosa, escribe a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> con el enlace de tu consulta y el texto oficial. Los errores confirmados se corrigen en los datos, se convierten en una prueba y se fechan. Ver también la <a href={route('editorial', lang)}>política editorial</a> y el <a href={route('terms', lang)}>aviso legal</a>.</p>
+    <p class="text-sm text-navy-600">Reglas revisadas el <time datetime={LAST_UPDATED}>{fecha(LAST_UPDATED)}</time>.</p>
+  </div>
+</PageLayout>

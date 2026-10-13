@@ -1,0 +1,27 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, LEGAL, SITE_NAMES, SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { fecha } from '../../lib/fmt';
+const lang = 'es';
+---
+<PageLayout title={`Aviso legal de ${SITE_NAMES[lang]}: editor, alojamiento y uso`} description="Editor y proveedor de alojamiento de la herramienta Hoy No Circula y pico y placa, alcance de las respuestas, propiedad intelectual, inserción de la herramienta y ley aplicable." lang={lang} noindex={true} breadcrumbs={[{ label: 'Aviso legal' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>Aviso legal y condiciones de uso</h1>
+    <p>Información facilitada en virtud del artículo 6 III-1 de la ley francesa n.º 2004-575 del 21 de junio de 2004, ya que el editor está establecido en Francia.</p>
+    <h2>Editor</h2>
+    <LegalIdentity lang={lang} />
+    <p>Director de la publicación: {AUTHOR_NAME}, responsable del contenido de {SITE_URL}.</p>
+    <h2>Alojamiento</h2>
+    <LegalIdentity mode="hosting" lang={lang} />
+    <h2>No es un sitio del gobierno</h2>
+    <p>{SITE_NAMES[lang]} es un sitio independiente. No pertenece ni está avalado por la Secretaría del Medio Ambiente de la Ciudad de México (SEDEMA), la Comisión Ambiental de la Megalópolis (CAMe), la Secretaría de Movilidad, el Gobierno del Estado de México, ninguna alcaldía o secretaría de movilidad de Colombia ni el Ministerio de Transporte. No emite permisos, hologramas ni excepciones y no gestiona multas. La herramienta aplica a la placa que eliges las reglas que esas autoridades publican; una contingencia ambiental, un decreto nuevo o una orden de un agente de tránsito prevalecen siempre sobre lo que diga esta página. El método y sus límites están en la página <a href={route('method', lang)}>Cómo calculamos</a>.</p>
+    <h2>Responsabilidad</h2><p>Cada regla se lee en el texto oficial y el motor se prueba antes de cada publicación, pero un error o un cambio de última hora siempre son posibles. El editor no responde de una multa ni de una inmovilización derivadas de una consulta. Si ves un error, escríbenos desde la página de <a href={route('contact', lang)}>contacto</a>.</p>
+    <h2>Propiedad intelectual</h2><p>Los textos, el diseño y el código pertenecen al editor; se permiten citas breves con enlace. Los acuerdos, decretos y gacetas citados siguen siendo documentos públicos de las autoridades que los emitieron.</p>
+    <h2>Insertar la herramienta</h2><p>La consulta de Hoy No Circula y de pico y placa se puede insertar gratis en otro sitio, con el enlace de crédito visible: ver la página <a href={route('widget', lang)}>Insertar la herramienta</a>.</p>
+    <h2>Datos personales</h2><p>El sitio no instala cookies y el editor no guarda la placa ni la ciudad que eliges. Detalles: <a href={route('privacy', lang)}>política de privacidad</a> y <a href={route('cookies', lang)}>cookies</a>.</p>
+    <h2>Contenido ilícito</h2><p>Escribe a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> con la dirección de la página.</p>
+    <h2>Ley aplicable</h2><p>Se aplica la ley francesa; a falta de acuerdo amistoso, son competentes los tribunales de {LEGAL.jurisdiction}. Actualizado el {fecha(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

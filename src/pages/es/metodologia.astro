@@ -1,0 +1,43 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema, webPageSchema } from '../../lib/seo';
+import { P, MX, VERIF, CIUDADES, FESTIVOS, horas24, horario, digits, fecha, mxn, cop, multaHncPesos, multaVerifPesos, costoVerifPesos } from '../../lib/kit';
+import { table, ext, SOURCES } from '../../lib/helpers';
+const lang = 'es';
+const title = 'Hoy No Circula y pico y placa 2026: método, fuentes y límites';
+const description = 'Cómo calcula la herramienta el Hoy No Circula, la verificación y el pico y placa de 2026: qué gaceta o decreto aplica cada regla, qué pruebas pasa y qué no puede saber.';
+const path = route('method', lang);
+const CO = (P as unknown as { co: { multaC14: number; uvb2026: number; smmlv2026: number } }).co;
+const [m20, m25, m30] = multaHncPesos();
+const srcRows = Object.values(SOURCES).map((s) => [s.label, ext(s.url, new URL(s.url).hostname.replace(/^www\./, ''))]);
+const ciudadRows = CIUDADES.map((c) => [c.nombre, c.carro.esquema === 'paridad' ? 'Día par o impar' : c.carro.esquema === 'semana' ? 'Día de la semana' : 'Sin medida general', c.carro.esquema === 'ninguno' ? '–' : horario(c.carro.horas), c.motos ? (c.motos.digito === 'primero' ? 'Sí, primer número' : 'Sí, último número') : 'No', c.carro.esquema === 'ninguno' ? '–' : `hasta el ${fecha(c.vigencia.hasta)}`]);
+---
+<PageLayout title={title} description={description} lang={lang} jsonLd={[webPageSchema({ name: 'Cómo calculamos', description, path, lang }), breadcrumbSchema([{ name: 'Inicio', path: route('home', lang) }, { name: 'Cómo calculamos', path }])]} breadcrumbs={[{ label: 'Cómo calculamos' }]}>
+  <header class="mb-6"><h1 class="font-serif text-3xl font-bold text-navy-900 md:text-4xl">Cómo calculamos</h1>
+  <p class="mt-3 text-lg text-navy-700">Las reglas de cada autoridad en archivos de parámetros, funciones pequeñas que las aplican a tu placa en el navegador, y pruebas con los casos que publican las propias autoridades antes de cada publicación.</p></header>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h2>Hoy No Circula</h2>
+    <p>El motor aplica el decreto del Programa Hoy No Circula de la Gaceta Oficial del 19 de junio de 2014 y el apartado 14 del programa de verificación del segundo semestre de 2026. De lunes a viernes, los hologramas 1 y 2 no circulan de {horas24(MX.hnc.horas)} el día de su terminación: lunes {digits(MX.hnc.colores.amarillo.digitos)}, martes {digits(MX.hnc.colores.rosa.digitos)}, miércoles {digits(MX.hnc.colores.rojo.digitos)}, jueves {digits(MX.hnc.colores.verde.digitos)} y viernes {digits(MX.hnc.colores.azul.digitos)}. El sábado se calcula con el rango del sábado dentro del mes: el holograma 1 non descansa el primero y el tercero, el par el segundo y el cuarto, y circula el quinto; el holograma 2 y los autos foráneos sin holograma reconocido no circulan ningún sábado. Los foráneos sin holograma tampoco circulan de lunes a viernes de {MX.hnc.foraneoManana[0]} a {MX.hnc.foraneoManana[1]}. Los hologramas 00, 0 y exento, las motos y los autos con Pase Turístico quedan libres fuera de contingencia. El día se toma en la zona horaria de la Ciudad de México.</p>
+    <p>Dos casos no los resuelve la herramienta: las placas con varias series de números, donde el decreto de 2014 toma el último número de la primera serie y el programa de 2026 el último número de la placa, y los avisos de suspensión en días festivos, que la autoridad publica caso por caso. En ambos la página lo dice.</p>
+    <h2>Contingencia ambiental</h2>
+    <p>Es un escenario que eliges, no una predicción. Con la fase marcada, el motor aplica la Tabla 3 del Programa de Contingencias de 2019: no circulan los hologramas 2, los foráneos sin holograma y los pases turísticos; el holograma 1 según la terminación par o non que fije el comunicado; los hologramas 0 y 00 el día de su engomado entre semana y, en fin de semana, el engomado que anuncie la CAMe; en Fase II, además, la mitad de las motos por terminación. Sin el dato del comunicado la respuesta es «depende del comunicado».</p>
+    <h2>Verificación y multas en México</h2>
+    <p>El calendario por engomado y los montos vienen del programa del segundo semestre de 2026. Los montos en pesos se calculan con la UMA 2026 del INEGI ({mxn(P.mx.uma.diaria)} diarios desde el {fecha(P.mx.uma.desde)}): verificación {VERIF.costoUma} UMA más IVA, {mxn(costoVerifPesos())}; multa por verificar tarde {VERIF.multaUma} UMA, {mxn(multaVerifPesos())}; multa por circular en día restringido, {P.mx.multaHncVeces.join(', ')} UMA según el artículo 47 del Reglamento de Tránsito: {mxn(m20)}, {mxn(m25)} o {mxn(m30)}.</p>
+    <h2>Pico y placa</h2>
+    <p>Cada ciudad es una entrada del archivo de ciudades con su esquema, sus periodos de rotación con fecha de inicio y de fin, su horario, si aplica en sábado, si se suspende en festivos, la regla de las motos y el número de la placa que cuenta. Los festivos de 2026 se calculan con la Ley 51 de 1983 ({FESTIVOS.length} días) y se comparan con los calendarios oficiales que los mencionan. Fuera de la vigencia publicada, la herramienta responde «rotación no publicada».</p>
+    <Fragment set:html={table(['Ciudad', 'Esquema', 'Horario', 'Motos', 'Datos hasta'], ciudadRows, 'Reglas cargadas en la herramienta; el decreto de cada una está en su página.')} />
+    <p>La multa por circular en pico y placa es la infracción C.14 del artículo 131 de la Ley 769 de 2002, más la inmovilización. Desde 2024 las multas que se fijaban en salarios mínimos se convierten en UVB (Ley 2294 de 2023, artículo 313); para 2026 la UVB vale {cop(CO.uvb2026)} y la tabla oficial de Barranquilla fija la C.14 en {cop(CO.multaC14)}. No mostramos el cálculo con el salario mínimo de {cop(CO.smmlv2026)} porque ya no es la base del cobro.</p>
+    <h2>Pruebas</h2>
+    <p>Los motores son funciones puras que se prueban en cada compilación: días de engomado, los cinco sábados de octubre de 2026, el caso del 13 de septiembre de 2026 con su comunicado, los foráneos de la mañana, el cálculo en UMA; para Colombia, los días pares e impares que publica la Alcaldía de Bogotá para octubre de 2026, la tabla de Medellín para carros y motos, el cambio de trimestre de Bucaramanga del 5 de octubre y sus sábados, y la respuesta fuera de vigencia. Si una prueba falla, no se publica.</p>
+    <h2>Lo que la herramienta no hace</h2>
+    <ul>
+      <li>No predice contingencias ni medidas temporales (cierres, operativos, pico y placa ampliado en vacaciones).</li>
+      <li>No conoce tu caso particular: placas de discapacidad, permisos especiales, vehículos de carga, taxis o transporte público tienen reglas propias.</li>
+      <li>No aplica una rotación que la autoridad no ha publicado.</li>
+    </ul>
+    <h2>Todas las fuentes</h2>
+    <Fragment set:html={table(['Documento', 'Sitio'], srcRows, `Consultadas el ${fecha(P.retrieved_at)}.`)} />
+    <p>Dudas o correcciones: <a href={route('contact', lang)}>contacto</a>. Ver también la <a href={route('editorial', lang)}>política editorial</a>.</p>
+  </div>
+</PageLayout>

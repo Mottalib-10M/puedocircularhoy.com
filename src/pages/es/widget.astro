@@ -1,0 +1,25 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'es';
+const frames = [
+  { slug: 'hoy-no-circula', title: 'Hoy No Circula: ¿circula mi auto hoy y mañana? (CDMX y Edomex)', h: 760, who: 'Medios de la Ciudad de México, estacionamientos, empresas con flotilla, escuelas de manejo y administraciones de condominios' },
+  { slug: 'pico-y-placa', title: 'Pico y placa hoy y mañana en las ciudades de Colombia', h: 760, who: 'Medios locales, parqueaderos, empresas de domicilios, alquiler de carros y conjuntos residenciales' },
+];
+const code = (f: (typeof frames)[number]) => `<iframe src="${SITE_URL}/embed/${f.slug}/" title="${f.title}" width="100%" height="${f.h}" style="border:0;max-width:1000px" loading="lazy"></iframe>`;
+---
+<PageLayout title="Insertar la consulta de Hoy No Circula o pico y placa en tu sitio" description="Inserta gratis la consulta de Hoy No Circula (CDMX y Edomex) o de pico y placa por ciudad de Colombia con una línea de código, sin cookies y actualizada con cada decreto." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Inicio', path: route('home', lang) }, { name: 'Insertar la herramienta', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Insertar la herramienta' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="font-serif text-3xl font-bold text-navy-900 md:text-4xl">Insertar la herramienta</h1>
+    <p class="mt-3 text-lg text-navy-700">Una línea de código. Cuando una alcaldía publica la rotación del semestre o la Gaceta publica el programa de verificación, la herramienta insertada se actualiza sola.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    <p>Condiciones: deja visible el enlace de crédito bajo el marco, no modifiques el marco y presenta la respuesta como orientativa: ante una contingencia o un operativo manda la autoridad. El marco no instala cookies y no nos envía nada sobre quien lo usa. Dudas: <a href={route('contact', lang)}>contacto</a>.</p>
+    {frames.map((f) => <><h2>{f.title}</h2><p>Para: {f.who}.</p><pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code(f)}</code></pre></>)}
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src="/embed/pico-y-placa/" title="Pico y placa" width="100%" height="760" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>

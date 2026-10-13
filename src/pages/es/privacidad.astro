@@ -1,0 +1,30 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { CONTACT_EMAIL, LAST_UPDATED, LEGAL, SITE_NAMES, SITE_URL, CLARITY_ID } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { fecha } from '../../lib/fmt';
+const lang = 'es';
+---
+<PageLayout title={`Privacidad en ${SITE_NAMES[lang]}: tu placa no sale del teléfono`} description="Qué trata la herramienta de Hoy No Circula y pico y placa: sin cookies, sin cuenta, sin guardar tu placa. Tus derechos según el RGPD, la ley mexicana y la ley colombiana." lang={lang} noindex={true} breadcrumbs={[{ label: 'Privacidad' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>Política de privacidad</h1>
+    <p>Esta política cubre {SITE_URL}. Para saber si circulas solo necesitas indicar un número de la placa, el holograma o la ciudad: ni la placa completa, ni tu nombre, ni tu ubicación. Ese dato se procesa en tu propio navegador y nunca llega a nosotros. El editor está establecido en Francia, por lo que el Reglamento General de Protección de Datos de la Unión Europea se aplica a todo lo que hace el sitio; las personas en México y en Colombia conservan además los derechos que les dan la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y la Ley 1581 de 2012.</p>
+    <p>Este sitio no instala cookies y la herramienta no guarda nada en tu dispositivo.</p>
+    <h2>1. Responsable</h2>
+    <LegalIdentity lang={lang} />
+    <h2>2. Lo que nunca sale de tu navegador</h2>
+    <p>El número de placa, el holograma, la entidad, la ciudad y el tipo de vehículo que eliges se procesan con código que corre en tu dispositivo. El botón «Copiar enlace» escribe esas opciones en la dirección de la página para que puedas mandar la consulta; quien reciba el enlace las verá.</p>
+    <h2>3. Lo que se procesa</h2>
+    <h3>Registros del alojamiento</h3><p>Como cualquier alojamiento web, GitHub registra la dirección IP, la hora, la página pedida y el tipo de navegador de cada visita para mantener el servicio seguro. Base jurídica: interés legítimo. Conservación: la que fija GitHub.</p>
+    {CLARITY_ID
+      ? <><h3>Medición anónima de la estabilidad, sin cookies</h3><p>Para encontrar páginas que fallan, el sitio carga Microsoft Clarity (Microsoft Ireland Operations Limited, Dublín) sin cookies: errores, tiempos de carga, clics sin efecto y desplazamiento se miden por página vista, sin unir visitas, y el contenido y lo que eliges quedan ocultos. Grabaciones conservadas 30 días, datos agregados hasta 13 meses. Base jurídica: interés legítimo (artículo 6.1.f del RGPD). Puedes oponerte bloqueando clarity.ms o escribiéndonos.</p></>
+      : <><h3>Sin medición de audiencia</h3><p>Hoy no funciona en el sitio ninguna herramienta de medición, de publicidad ni de redes sociales. Si se añade una herramienta de estabilidad, esta página la nombrará y dirá qué registra antes de activarla.</p></>}
+    <h3>Correos</h3><p>Si nos escribes, guardamos tu dirección y tu mensaje para responder, y los borramos tres años después del último intercambio. No envíes tu placa completa, tu tarjeta de circulación ni copias de una multa: basta con la ciudad, la fecha y la regla que cuestionas.</p>
+    <h2>4. Sin venta ni cesión</h2><p>No vendemos datos personales, no los cedemos para publicidad y no hacemos perfiles. No hay publicidad en el sitio.</p>
+    <h2>5. Destinatarios y transferencias</h2><p>El proveedor de alojamiento, GitHub, Inc., está en Estados Unidos; los datos técnicos de las visitas pueden tratarse allí al amparo del Marco de Privacidad de Datos UE-EE. UU.</p>
+    <h2>6. Tus derechos</h2><p>Puedes pedir acceso, rectificación, supresión, limitación o portabilidad, u oponerte al tratamiento (derechos ARCO en México, derechos de habeas data en Colombia), escribiendo a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>; respondemos en un mes. También puedes reclamar ante la {LEGAL.supervisoryAuthority} (<a href={LEGAL.supervisoryAuthorityUrl} rel="nofollow noopener" target="_blank">{LEGAL.supervisoryAuthorityUrl}</a>).</p>
+    <h2>7. Menores</h2><p>El sitio está pensado para personas que conducen. No se dirige a menores y no recoge datos de ellos.</p>
+    <p>Ver también <a href={route('cookies', lang)}>cookies</a> y el <a href={route('terms', lang)}>aviso legal</a>. Actualizado el {fecha(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

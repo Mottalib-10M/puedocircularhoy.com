@@ -1,0 +1,24 @@
+---
+/** Rend un outil avec ses données (côté serveur), en îlot hydraté. */
+import HncTool from './calc/HncTool';
+import CalendarioMes from './calc/CalendarioMes';
+import VerifTool from './calc/VerifTool';
+import PypTool from './calc/PypTool';
+import { MX, VERIF, CIUDADES, FESTIVOS } from '../lib/kit';
+import { route, ROUTES } from '../i18n/routes';
+import type { ToolKind, ToolProps } from '../lib/page-types';
+import type { Holo } from '../lib/engine/mx';
+interface Props extends ToolProps { kind: ToolKind; idPrefix?: string }
+const { kind, idPrefix, city = 'bogota', lockCity = false, holo, digit, manana, vehiculo } = Astro.props;
+const methodHref = route('method', 'es');
+const r = (id: string) => (ROUTES.some((x) => x.id === id) ? route(id, 'es') : undefined);
+const calMx = r('calendario-hoy-no-circula');
+const calCo = r('calendario-pico-y-placa');
+const contHref = r('contingencia-ambiental');
+const mx = { hnc: MX.hnc };
+---
+{kind === 'hnc' && <HncTool client:load p={mx} holo={holo as Holo | undefined} digit={digit} manana={manana} methodHref={methodHref} calHref={calMx} contHref={contHref} idPrefix={idPrefix} />}
+{kind === 'hnc-cal' && <CalendarioMes client:load modo="mx" p={mx} holo={holo as Holo | undefined} methodHref={methodHref} idPrefix={idPrefix} />}
+{kind === 'verif' && <VerifTool client:load p={mx} v={VERIF} digit={digit} methodHref={methodHref} idPrefix={idPrefix} />}
+{kind === 'pyp' && <PypTool client:load ciudades={lockCity ? CIUDADES.filter((c) => c.slug === city) : CIUDADES} festivos={FESTIVOS} city={city} lockCity={lockCity} vehiculo={vehiculo} methodHref={methodHref} calHref={calCo} idPrefix={idPrefix} />}
+{kind === 'pyp-cal' && <CalendarioMes client:load modo="co" ciudades={lockCity ? CIUDADES.filter((c) => c.slug === city) : CIUDADES} festivos={FESTIVOS} city={city} lockCity={lockCity} methodHref={methodHref} idPrefix={idPrefix} />}

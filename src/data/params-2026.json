@@ -1,0 +1,444 @@
+{
+  "_lisezmoi": "Paramètres des règles de circulation (RECETTE §4, §17.4). Chaque valeur est relue sur la source citée ; retrieved_at = date de lecture. Les villes colombiennes sont dans co-ciudades-2026.json.",
+  "year": 2026,
+  "retrieved_at": "2026-10-13",
+  "valid_from": "2026-07-01",
+  "valid_to": "2026-12-31",
+  "mx": {
+    "hnc": {
+      "horas": [
+        "05:00",
+        "22:00"
+      ],
+      "semana": {
+        "1": [
+          5,
+          6
+        ],
+        "2": [
+          7,
+          8
+        ],
+        "3": [
+          3,
+          4
+        ],
+        "4": [
+          1,
+          2
+        ],
+        "5": [
+          9,
+          0
+        ]
+      },
+      "colores": {
+        "amarillo": {
+          "dia": 1,
+          "digitos": [
+            5,
+            6
+          ]
+        },
+        "rosa": {
+          "dia": 2,
+          "digitos": [
+            7,
+            8
+          ]
+        },
+        "rojo": {
+          "dia": 3,
+          "digitos": [
+            3,
+            4
+          ]
+        },
+        "verde": {
+          "dia": 4,
+          "digitos": [
+            1,
+            2
+          ]
+        },
+        "azul": {
+          "dia": 5,
+          "digitos": [
+            9,
+            0
+          ]
+        }
+      },
+      "sabadoHolo1": {
+        "impar": [
+          1,
+          3
+        ],
+        "par": [
+          2,
+          4
+        ]
+      },
+      "foraneoManana": [
+        "05:00",
+        "11:00"
+      ],
+      "_fuente": "hnc_decreto (Tablas 1, 2 y 3, apartados IV, V, X y XI) y verif_2s2026 (apartado 14)"
+    },
+    "verif": {
+      "semestres": {
+        "1": {
+          "amarillo": [
+            1,
+            2
+          ],
+          "rosa": [
+            2,
+            3
+          ],
+          "rojo": [
+            3,
+            4
+          ],
+          "verde": [
+            4,
+            5
+          ],
+          "azul": [
+            5,
+            6
+          ]
+        },
+        "2": {
+          "amarillo": [
+            7,
+            8
+          ],
+          "rosa": [
+            8,
+            9
+          ],
+          "rojo": [
+            9,
+            10
+          ],
+          "verde": [
+            10,
+            11
+          ],
+          "azul": [
+            11,
+            12
+          ]
+        }
+      },
+      "prorroga15": {
+        "amarillo": "2026-09-15",
+        "rosa": "2026-10-15",
+        "rojo": "2026-11-15",
+        "verde": "2026-12-15",
+        "azul": "2027-01-15"
+      },
+      "vigencia": {
+        "desde": "2026-07-01",
+        "hasta": "2026-12-31"
+      },
+      "uma": 117.31,
+      "multaUma": 20,
+      "costoUma": 5.625,
+      "iva": 0.16,
+      "_fuente": "verif_2s2026 (5.1.1 Tabla 1, 5.1.9, 7.1, 10.1.1, 17) ; verif_1s2026 ; uma_2026"
+    },
+    "uma": {
+      "diaria": 117.31,
+      "mensual": 3566.22,
+      "anual": 42794.64,
+      "desde": "2026-02-01"
+    },
+    "multaHncVeces": [
+      20,
+      25,
+      30
+    ],
+    "contingencia": {
+      "fase1": {
+        "ozono_puntos": 150,
+        "ozono_ppb": 154,
+        "pm10_puntos": 150,
+        "pm10_ugm3": 214,
+        "pm25_puntos": 150,
+        "pm25_ugm3": 97.4
+      },
+      "fase2": {
+        "ozono_puntos": 200,
+        "ozono_ppb": 204,
+        "pm10_puntos": 200,
+        "pm10_ugm3": 354,
+        "pm25_puntos": 200,
+        "pm25_ugm3": 150.4
+      },
+      "preventiva_puntos": 140,
+      "boletines": [
+        "10:00",
+        "15:00",
+        "20:00"
+      ],
+      "taxis_hasta": "10:00",
+      "municipiosEdomex": 59,
+      "ejemplo": {
+        "fecha": "2026-09-12",
+        "aplica": "2026-09-13",
+        "ppb": 161,
+        "estacion": "BJU",
+        "holo1": "non",
+        "color": "rosa"
+      },
+      "_fuente": "pcaa_2019 (Tablas 1 a 4, VII, XII) ; came_2026_09_12"
+    },
+    "pase": {
+      "dias14": 1,
+      "dias7": 2,
+      "antiguedadMax": 15,
+      "modeloMin": 2011
+    },
+    "hologramas": {
+      "00": {
+        "vigenciaAnios": 2
+      },
+      "0": {
+        "modeloDesde": 2006,
+        "vigenciaMeses": 6,
+        "dieselDesde": 2012
+      },
+      "1": {
+        "modeloDesde": 1994,
+        "modeloHasta": 2005
+      },
+      "2": {
+        "modeloHasta": 1993
+      },
+      "exento": {
+        "hibridoAnios": 6
+      },
+      "_fuente": "verif_2s2026 (4.8, 8.3 a 8.7, 14.1 XI y XII)"
+    }
+  },
+  "sources": {
+    "hnc_decreto": {
+      "url": "https://paot.mx/centro/programas_a/2014/GODF_19_06_2014.pdf",
+      "label": "Gaceta Oficial del Distrito Federal, 19 de junio de 2014: Decreto por el que se expide el Programa Hoy No Circula en el Distrito Federal"
+    },
+    "verif_2s2026": {
+      "url": "https://proyectos.sedema.cdmx.gob.mx/datos/storage/app/media/gacetas/GOCDMX_26-07-01_DGCA.pdf",
+      "label": "SEDEMA, Gaceta Oficial de la Ciudad de México n.º 1892, 1 de julio de 2026: Programa de verificación vehicular obligatoria para el segundo semestre de 2026"
+    },
+    "verif_1s2026": {
+      "url": "https://proyectos.sedema.cdmx.gob.mx/datos/storage/app/media/gacetas/GOCDMX_26-01-02_DGCA.pdf",
+      "label": "SEDEMA, Gaceta Oficial de la Ciudad de México n.º 1770, 2 de enero de 2026: Programa de verificación vehicular obligatoria para el primer semestre de 2026"
+    },
+    "pcaa_2019": {
+      "url": "https://proyectos.sedema.cdmx.gob.mx/datos/storage/app/media/gacetas/GOCDMX_19-05-28_programacontingencias.pdf",
+      "label": "SEDEMA, Gaceta Oficial de la Ciudad de México n.º 100 Bis, 28 de mayo de 2019: Programa para Prevenir y Responder a Contingencias Ambientales Atmosféricas"
+    },
+    "aire_contingencias": {
+      "url": "http://www.aire.cdmx.gob.mx/default.php?opc=%27YqBhnmU=%27",
+      "label": "SEDEMA, Dirección de Monitoreo Atmosférico: contingencias ambientales (aire.cdmx.gob.mx)"
+    },
+    "came_prensa": {
+      "url": "https://www.gob.mx/comisionambiental/archivo/prensa",
+      "label": "Comisión Ambiental de la Megalópolis (CAMe): comunicados de activación y suspensión de contingencias"
+    },
+    "came_2026_09_12": {
+      "url": "https://www.gob.mx/comisionambiental/prensa/se-435677",
+      "label": "CAMe, 12 de septiembre de 2026: se activa contingencia ambiental atmosférica por ozono en la ZMVM (boletín de las 15:00)"
+    },
+    "reglamento_transito": {
+      "url": "https://data.consejeria.cdmx.gob.mx/images/leyes/reglamentos/REGLAMENTO_DE_TRANSITO_DE_LA_CIUDAD_DE_MEXICO_6.1.pdf",
+      "label": "Reglamento de Tránsito de la Ciudad de México, artículos 47 y 67 (última reforma publicada el 26 de noviembre de 2024)"
+    },
+    "uma_2026": {
+      "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2026/uma/uma2026.pdf",
+      "label": "INEGI, comunicado 1/26 del 8 de enero de 2026: valor de la Unidad de Medida y Actualización (UMA) 2026"
+    },
+    "reglamento_verif_2026": {
+      "url": "https://proyectos.sedema.cdmx.gob.mx/datos/storage/app/media/gacetas/GOCDMX_26-05-19_GOBIERNO.pdf",
+      "label": "Gaceta Oficial de la Ciudad de México n.º 1861, 19 de mayo de 2026: Reglamento de la Ley Ambiental de la Ciudad de México en materia de verificación vehicular"
+    },
+    "pase_turistico": {
+      "url": "https://paseturistico.cdmx.gob.mx",
+      "label": "Gobierno de la Ciudad de México: solicitud del Pase Turístico"
+    },
+    "multa_linea_captura": {
+      "url": "https://data.finanzas.cdmx.gob.mx/formato_lc/ambiente/50",
+      "label": "Secretaría de Administración y Finanzas de la CDMX: línea de captura de la multa por verificación extemporánea"
+    },
+    "bog_octubre_2026": {
+      "url": "https://bogota.gov.co/mi-ciudad/movilidad/pico-y-placa-en-bogota-vehiculos-particulares-1-31-octubre-de-2026",
+      "label": "Alcaldía de Bogotá, 1 de octubre de 2026: así opera el pico y placa para vehículos particulares en octubre de 2026"
+    },
+    "bog_decreto_003_2023": {
+      "url": "https://bogota.gov.co/mi-ciudad/gestion-juridica/decreto-003-de-2023-nuevo-pico-y-placa-y-otras-medidas-de-movilidad",
+      "label": "Alcaldía de Bogotá: Decreto 003 de 2023, nuevo pico y placa (pares e impares) desde el 10 de enero de 2023"
+    },
+    "bog_solidario_2026": {
+      "url": "https://bogota.gov.co/mi-ciudad/movilidad/pico-y-placa-solidario-bogota-valores-base-actualizados-2026",
+      "label": "Alcaldía de Bogotá, 3 de febrero de 2026: Resolución 120963 de 2026, valores base del Pico y Placa Solidario"
+    },
+    "bog_regional_2026": {
+      "url": "https://bogota.gov.co/mi-ciudad/movilidad/como-es-el-pico-y-placa-regional-ingreso-bogota-12-de-octubre-2026",
+      "label": "Alcaldía de Bogotá, 12 de octubre de 2026: pico y placa regional de ingreso a Bogotá"
+    },
+    "bog_excepciones": {
+      "url": "https://bogota.gov.co/mi-ciudad/movilidad/cuales-son-las-excepciones-del-pico-y-placa-que-existen-en-bogota",
+      "label": "Alcaldía de Bogotá: excepciones del pico y placa (Solidario, eléctricos e híbridos, vehículo compartido)"
+    },
+    "bog_taxis": {
+      "url": "https://bogota.gov.co/mi-ciudad/movilidad/pico-y-placa-en-bogota-particulares-y-taxis-viernes-9-de-octubre-2026",
+      "label": "Alcaldía de Bogotá, 8 de octubre de 2026: pico y placa de particulares y taxis"
+    },
+    "movilidad_bogota": {
+      "url": "https://www.movilidadbogota.gov.co",
+      "label": "Secretaría Distrital de Movilidad de Bogotá: trámite del Pico y Placa Solidario y de las excepciones"
+    },
+    "med_decreto_1490_2026": {
+      "url": "https://www.medellin.gov.co/es/wp-content/uploads/2022/07/Decreto-1490-de-2026.pdf",
+      "label": "Alcaldía de Medellín, Decreto 1490 del 30 de julio de 2026: rotación del pico y placa del segundo semestre de 2026"
+    },
+    "med_comunicado_2026": {
+      "url": "https://www.medellin.gov.co/es/sala-de-prensa/noticias/la-nueva-rotacion-del-pico-y-placa-en-medellin-comenzara-a-regir-a-partir-del-lunes-3-de-agosto/",
+      "label": "Alcaldía de Medellín, 24 de julio de 2026: la nueva rotación rige desde el lunes 3 de agosto"
+    },
+    "itagui_decreto_1011_2026": {
+      "url": "https://www.transitoitagui.gov.co/wp-content/uploads/2026/08/decreto_1011_-2026_picoyplaca.pdf",
+      "label": "Secretaría de Movilidad de Itagüí, Decreto 1011 de 2026: pico y placa del segundo semestre de 2026"
+    },
+    "cali_boletin_2s2026": {
+      "url": "https://www.cali.gov.co/movilidad/publicaciones/193096/pico-y-placa-rota-en-cali-para-el-segundo-semestre-de-2026-nueva-medida-rige-desde-el-1-de-julio/",
+      "label": "Secretaría de Movilidad de Cali, 23 de junio de 2026: rotación del pico y placa del segundo semestre de 2026"
+    },
+    "cali_borrador_2s2026": {
+      "url": "https://www.cali.gov.co/movilidad/documentos/10631/borrador-de-decreto-pico-y-placa-segundo-semestre-2026/",
+      "label": "Secretaría de Movilidad de Cali: proyecto de decreto del pico y placa del segundo semestre de 2026 (exenciones)"
+    },
+    "bga_rotacion_t4": {
+      "url": "https://www.bucaramanga.gov.co/noticias/pico-y-placa-tendra-nueva-rotacion-de-digitos-2/",
+      "label": "Alcaldía de Bucaramanga, 23 de septiembre de 2026: nueva rotación de dígitos desde el 5 de octubre (Resolución 854 de 2025)"
+    },
+    "bga_rotacion_t3": {
+      "url": "https://www.bucaramanga.gov.co/noticias/conozca-la-nueva-rotacion-de-pico-y-placa-para-vehiculos-particulares-que-regira-desde-el-6-de-julio/",
+      "label": "Alcaldía de Bucaramanga, 23 de junio de 2026: rotación del pico y placa desde el 6 de julio"
+    },
+    "bga_exoneracion": {
+      "url": "https://www.bucaramanga.gov.co/noticias/conozca-como-eximir-pico-y-placa-por-un-ano-en-bucaramanga/",
+      "label": "Alcaldía de Bucaramanga, 1 de julio de 2026: Resolución 189 de 2026, un año sin pico y placa por matrícula inicial"
+    },
+    "baq_carnaval_2026": {
+      "url": "https://barranquilla.gov.co/mi-barranquilla/pico-y-placa-para-vehiculos-particulares-en-toda-la-ciudad-viernes-sabado-domingo-y-lunes-de-carnaval",
+      "label": "Alcaldía de Barranquilla: pico y placa temporal para particulares en Carnaval 2026 (Decreto 0036 de 2026)"
+    },
+    "baq_motos_2026": {
+      "url": "https://barranquilla.gov.co/transito/medidas-que-regulan-circulacion-de-motociclistas-continuan-vigentes-en-barranquilla-hasta-octubre-de-2026",
+      "label": "Alcaldía de Barranquilla: medidas para motociclistas vigentes hasta octubre de 2026 (Decreto 0703 de 2025)"
+    },
+    "baq_multas_2026": {
+      "url": "https://barranquilla.gov.co/wp-content/uploads/2026/01/multas-comparendos-2026.pdf",
+      "label": "Alcaldía de Barranquilla: valor de las multas de tránsito, vigencia 2026 (infracción C14: $633.111)"
+    },
+    "ctg_rotacion_2026": {
+      "url": "https://www.cartagena.gov.co/noticias/nueva-rotacion-pico-placa-para-motocicletas-vehiculos-particulares-cartagena-0",
+      "label": "Alcaldía de Cartagena (DATT): rotación del pico y placa de particulares y motos del 30 de junio al 2 de octubre de 2026"
+    },
+    "ctg_horario": {
+      "url": "https://www.cartagena.gov.co/noticias/pico-placa-no-sera-24-horas-datt-reitera-que-mantiene-medida-vigente-establecida-horario-fraccionado",
+      "label": "Alcaldía de Cartagena, 16 de junio de 2026: el pico y placa mantiene el horario fraccionado"
+    },
+    "per_decreto_540_2024": {
+      "url": "https://movilidadpereira.gov.co/Documentos/Dependencias/2024/Juridica/DecretosAlcaldia/DecretoPicoyPlaca2024.pdf",
+      "label": "Alcaldía de Pereira, Decreto 0540 del 26 de febrero de 2024: pico y placa de particulares y motos"
+    },
+    "per_sin_cambios": {
+      "url": "https://www.pereira.gov.co/publicaciones/9061/medida-de-pico-y-placa-en-pereira-se-mantiene-sin-modificaciones/",
+      "label": "Alcaldía de Pereira, 18 de diciembre de 2024: la medida de pico y placa se mantiene sin modificaciones"
+    },
+    "ley_769_2002": {
+      "url": "http://www.secretariasenado.gov.co/senado/basedoc/ley_0769_2002_pr003.html",
+      "label": "Ley 769 de 2002, Código Nacional de Tránsito, artículo 131, literal C.14 (Secretaría del Senado)"
+    },
+    "ley_1964_2019": {
+      "url": "http://www.secretariasenado.gov.co/senado/basedoc/ley_1964_2019.html",
+      "label": "Ley 1964 de 2019, artículo 6: vehículos eléctricos exentos del pico y placa (Secretaría del Senado)"
+    },
+    "mt_concepto_uvb_2026": {
+      "url": "https://mintransporte.gov.co/info/mintransporte/media/anexos/MEXQ3BQm.pdf",
+      "label": "Ministerio de Transporte, concepto 20261340231211 del 20 de febrero de 2026: multas de tránsito en UVB (UVB 2026: $12.110)"
+    },
+    "smmlv_2026": {
+      "url": "https://dapre.presidencia.gov.co/normativa/normativa/DECRETO%201469%20DEL%2029%20DE%20DICIEMBRE%20DE%202025.pdf",
+      "label": "Decreto 1469 del 29 de diciembre de 2025: salario mínimo de 2026 ($1.750.905)"
+    },
+    "ley_51_1983": {
+      "url": "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=4954",
+      "label": "Ley 51 de 1983 (Ley Emiliani): días festivos y traslado al lunes (Función Pública)"
+    }
+  },
+  "co": {
+    "festivos": [
+      "2026-01-01",
+      "2026-01-12",
+      "2026-03-23",
+      "2026-04-02",
+      "2026-04-03",
+      "2026-05-01",
+      "2026-05-18",
+      "2026-06-08",
+      "2026-06-15",
+      "2026-06-29",
+      "2026-07-20",
+      "2026-08-07",
+      "2026-08-17",
+      "2026-10-12",
+      "2026-11-02",
+      "2026-11-16",
+      "2026-12-08",
+      "2026-12-25"
+    ],
+    "_festivos": "Ley 51 de 1983, art. 1 (traslado al lunes) con Pascua el 5 de abril de 2026 ; concordancias : bogota.gov.co (lunes festivo 12/10), Decreto 1490 de Medellín (7/08).",
+    "multaC14": 633111,
+    "multaC14Fuente": "baq_multas_2026",
+    "uvb2026": 12110,
+    "smmlv2026": 1750905,
+    "smldvVeces": 15,
+    "solidario": {
+      "dia": 70294,
+      "mes": 561808,
+      "semestre": 2809311,
+      "factorFuera": 1.5,
+      "factorAntes": 1.2
+    },
+    "regional": {
+      "pares": [
+        "12:00",
+        "16:00"
+      ],
+      "impares": [
+        "16:00",
+        "20:00"
+      ],
+      "corredores": [
+        "Autopista Norte",
+        "Autopista Sur",
+        "Avenida calle 13 (Centenario)",
+        "Avenida calle 80",
+        "Avenida carrera Séptima",
+        "Avenida Boyacá y Vía al Llano",
+        "Vía Suba–Cota",
+        "Vía a La Calera",
+        "Vía a Choachí"
+      ]
+    },
+    "bogotaTaxis": [
+      "05:30",
+      "21:00"
+    ]
+  }
+}

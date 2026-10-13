@@ -1,0 +1,26 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { fecha } from '../../lib/fmt';
+const lang = 'es';
+---
+<PageLayout title={`Política editorial de ${SITE_NAMES[lang]}: decretos y correcciones`} description="De qué acuerdos, gacetas y decretos salen las reglas de Hoy No Circula, verificación y pico y placa, qué fuentes nunca dan una regla aquí y cómo se corrige un error." lang={lang} noindex={true} breadcrumbs={[{ label: 'Política editorial' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>Política editorial y de correcciones</h1>
+    <p>Quien consulta esta página va a decidir si saca el auto. Una rotación vieja o un sábado mal calculado se pagan con una multa y, en Colombia, con la grúa. Aquí explicamos de dónde sale cada regla y qué pasa cuando una está mal.</p>
+    <h2>Responsable</h2><p>Contenido y cálculos: {AUTHOR_NAME}, <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Fuentes que dan las reglas</h2>
+    <ul>
+      <li>México: los acuerdos y avisos publicados en la Gaceta Oficial de la Ciudad de México y en la Gaceta del Gobierno del Estado de México, las páginas de la SEDEMA, de la Comisión Ambiental de la Megalópolis y de la calidad del aire de la Ciudad de México, el Reglamento de Tránsito y el valor de la UMA que publica el INEGI;</li>
+      <li>Colombia: el decreto de cada alcaldía o la página oficial de su secretaría de movilidad o de tránsito, el Código Nacional de Tránsito (Ley 769 de 2002) en la Secretaría del Senado, el decreto del salario mínimo y la ley de festivos.</li>
+    </ul>
+    <h2>Fuentes que nunca dan una regla</h2>
+    <p>Las notas de prensa, otros calculadores y las redes sociales nos avisan de un cambio. Nunca aportan una regla: vamos al texto oficial, y si no lo encontramos, la página lo dice y la herramienta no responde para esas fechas en vez de suponer. Una contingencia ambiental se decide cada día: no la anticipamos, explicamos qué cambia en cada fase y enlazamos el aviso oficial.</p>
+    <h2>Ciclo de revisión</h2><p>Cada regla se relee al menos cada {REVIEW_CYCLE_MONTHS} meses y en cada fecha de cambio conocida. Una rotación anunciada pero aún no vigente se carga con su fecha de inicio y nunca se aplica antes.</p>
+    <h2>Correcciones</h2>
+    <ol><li>Comprobamos el aviso contra el texto oficial.</li><li>Corregimos el archivo de datos o el motor y añadimos una prueba que reproduce el caso.</li><li>La página muestra su nueva fecha de revisión.</li></ol>
+    <h2>Independencia</h2><p>Ningún verificentro, gestor de trámites, aseguradora ni empresa de grúas paga por aparecer, y la herramienta no pide nombre, teléfono ni correo. Si eso cambiara, lo diríamos junto al enlace en cuestión.</p>
+    <p>Ver también <a href={route('method', lang)}>Cómo calculamos</a>. Versión de la política: {fecha(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

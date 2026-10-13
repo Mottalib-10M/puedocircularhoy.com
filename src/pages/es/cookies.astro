@@ -1,0 +1,19 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES, CLARITY_ID } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { fecha } from '../../lib/fmt';
+const lang = 'es';
+---
+<PageLayout title={`Cookies en ${SITE_NAMES[lang]}: ninguna, nada que aceptar`} description="La consulta de Hoy No Circula, verificación y pico y placa no instala cookies ni guarda tu placa en el dispositivo; por eso el sitio no muestra aviso ni pide aceptar nada." lang={lang} noindex={true} breadcrumbs={[{ label: 'Cookies' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>Cookies</h1>
+    <p>Ninguna página de este sitio instala cookies y la herramienta no escribe nada en tu dispositivo. La placa y la ciudad que eliges solo existen en la pestaña abierta y desaparecen al cerrarla.</p>
+    <h2>Nada que aceptar</h2><p>No hay aviso de cookies porque no hay nada que aceptar: ni publicidad, ni cookies de medición, ni botones de redes sociales, ni cuentas.</p>
+    {CLARITY_ID
+      ? <><h2>Medición anónima de la estabilidad</h2><p>El sitio carga Microsoft Clarity sin cookies para detectar errores, páginas lentas y botones que no responden. En ese modo Clarity no instala cookies (ni <code>_clck</code>, ni <code>_clsk</code>, ni <code>MUID</code>, ni <code>CLID</code>), da a cada página vista un identificador de un solo uso y oculta el contenido y las opciones elegidas. Si bloqueas clarity.ms, la herramienta sigue funcionando.</p></>
+      : <><h2>Sin herramienta de medición</h2><p>Hoy no funciona ningún script de medición ni de seguimiento. Si se añade uno, esta página y la <a href={route('privacy', lang)}>política de privacidad</a> lo dirán antes.</p></>}
+    <h2>Enlaces para compartir</h2><p>El enlace de una consulta lleva tus opciones en la dirección de la página, no en una cookie. Quien lo reciba las verá.</p>
+    <p>Dudas: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Actualizado el {fecha(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

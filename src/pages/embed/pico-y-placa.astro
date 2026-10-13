@@ -1,0 +1,14 @@
+---
+/** Iframe : la consulta pico y placa nue, avec le lien de crédit (noindex, hors sitemap). */
+import '../../styles/global.css';
+import PypTool from '../../components/calc/PypTool';
+import { CIUDADES, FESTIVOS } from '../../lib/kit';
+import { SITE_URL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+---
+<!doctype html>
+<html lang="es-CO"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex" /><title>Pico y placa: consulta para insertar</title><link rel="canonical" href={`${SITE_URL}${route('pico-y-placa', 'es')}`} /></head>
+<body class="bg-white p-3 text-navy-900">
+  <PypTool client:load ciudades={CIUDADES} festivos={FESTIVOS} methodHref={`${SITE_URL}${route('method', 'es')}`} idPrefix="emb" />
+  <p class="mt-3 text-center text-sm"><a href={`${SITE_URL}${route('pico-y-placa', 'es')}`} target="_blank" rel="noopener" class="font-medium text-accent-700 underline">Pico y placa hoy en tu ciudad: {SITE_NAMES.es}</a></p>
+</body></html>

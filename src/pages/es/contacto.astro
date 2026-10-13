@@ -1,0 +1,28 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../../components/LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, REVIEW_CYCLE_MONTHS, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+import { fecha } from '../../lib/fmt';
+const lang = 'es';
+const description = 'Escríbenos cuando una alcaldía publique un decreto nuevo de pico y placa, cuando cambie el Hoy No Circula o la verificación, o para insertar la consulta en tu sitio.';
+---
+<PageLayout title={`Contacto de ${SITE_NAMES[lang]}: decretos nuevos y errores`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: 'Contacto', description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: 'Contacto' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h1>Contacto</h1>
+    <p>Un solo buzón, leído los días hábiles: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <h2>Salió un decreto nuevo en tu ciudad</h2>
+    <p>Las alcaldías colombianas cambian la rotación del pico y placa cada semestre, a veces cada trimestre, y la Ciudad de México publica en la Gaceta Oficial el programa de verificación de cada semestre. Mándanos el enlace del decreto, la resolución o el comunicado oficial y dinos qué página se ve afectada. Leemos el texto, cargamos la rotación nueva en el archivo de datos, repetimos las pruebas y fechamos la página.</p>
+    <h2>Te paró un agente y la página decía que circulabas</h2>
+    <p>Mándanos la ciudad, la fecha, la hora y el último número de la placa (no la placa completa). Lo más frecuente: una contingencia ambiental activada ese mismo día, un festivo mal leído, una moto en una ciudad que restringe por el primer número o un vehículo con placa de otro municipio. Te diremos cuál fue y, si el error es nuestro, lo corregimos y lo convertimos en una prueba.</p>
+    <h2>Insertar la consulta</h2>
+    <p>Medios locales, empresas con flotas, escuelas de manejo y conjuntos residenciales pueden poner la consulta en su página gratis: el código está en <a href={route('widget', lang)}>Insertar la herramienta</a>.</p>
+    <h2>Lo que no podemos hacer</h2>
+    <p>No tramitamos el Pase Turístico, ni la excepción de pico y placa, ni la verificación, y no podemos anular una multa. Para eso están la SEDEMA, la Secretaría del Medio Ambiente del Estado de México, los verificentros y la secretaría de movilidad de tu ciudad, enlazadas en cada página.</p>
+    <h2>Plazo de respuesta</h2><p>Normalmente cinco días hábiles, primero las correcciones. Cada regla se relee al menos cada {REVIEW_CYCLE_MONTHS} meses y en cada fecha de cambio conocida: el 1 de enero y el 1 de julio para la rotación colombiana y la verificación, y el día que una alcaldía publica su decreto.</p>
+    <h2>Editor</h2>
+    <LegalIdentity lang={lang} />
+    <p>Responsable del contenido: {AUTHOR_NAME}. Ver el <a href={route('terms', lang)}>aviso legal</a>. Actualizado el {fecha(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

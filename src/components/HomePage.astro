@@ -1,0 +1,68 @@
+---
+/**
+ * Accueil, dans un ordre propre au sujet (RECETTE §6.6, règle 2) : le sélecteur de pays et l'outil en tête,
+ * la réponse repliée, le tableau du jour ville par ville (calculé dans le navigateur), le registre des normes
+ * appliquées avec leur période de validité, l'index des pages par pays, les textes longs en accordéon, la FAQ.
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import Clamp from './Clamp.astro';
+import HomeTool from './calc/HomeTool';
+import TableroHoy from './calc/TableroHoy';
+import { HOME } from '../content/home';
+import { route, ROUTES } from '../i18n/routes';
+import { helpers, SOURCES } from '../lib/helpers';
+import { PAGES } from '../lib/pages';
+import { MX, CIUDADES, FESTIVOS, fecha } from '../lib/kit';
+import { faqSchema, organizationSchema, websiteSchema, webPageSchema, webApplicationSchema } from '../lib/seo';
+import { LAST_UPDATED } from '../data/site-config';
+const lang = 'es';
+const x = HOME;
+const path = route('home', lang);
+const h = helpers();
+const sources = x.sources.map((k) => ({ name: SOURCES[k].label, url: SOURCES[k].url }));
+const jsonLd = [websiteSchema(lang), organizationSchema(lang), webPageSchema({ name: x.h1, description: x.description, path, lang }), webApplicationSchema({ name: x.h1, description: x.description, path, lang }), faqSchema(x.faqs, lang)];
+const sections = x.sections(h);
+const has = (id: string) => ROUTES.some((r) => r.id === id);
+const r = (id: string) => (has(id) ? route(id, lang) : undefined);
+const links: Record<string, string> = Object.fromEntries([['cdmx', r('hoy-no-circula')], ...CIUDADES.map((c) => [c.slug, r(`pico-y-placa-${c.slug}`)])].filter(([, v]) => v) as Array<[string, string]>);
+const normas = [
+  { lugar: 'Ciudad de México y zona conurbada', norma: 'Programa Hoy No Circula (Gaceta Oficial del 19 de junio de 2014) y programa de verificación del 2.º semestre de 2026', vig: `hasta el ${fecha(MX.verif.vigencia.hasta)}`, src: SOURCES.verif_2s2026.url },
+  ...CIUDADES.map((c) => ({ lugar: c.nombre, norma: c.decreto, vig: c.carro.esquema === 'ninguno' ? 'sin medida general' : `del ${fecha(c.vigencia.desde)} al ${fecha(c.vigencia.hasta)}`, src: SOURCES[c.fuente].url })),
+];
+const mxPages = PAGES.filter((p) => p.group === 'hnc' || p.group === 'verif');
+const coPages = PAGES.filter((p) => p.group === 'pyp-ciudad' || p.group === 'pyp-reglas');
+---
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={x.faqs} sources={sources}>
+  <header class="mb-3">
+    <h1 class="font-serif text-3xl font-bold text-navy-900 md:text-4xl">{x.h1}</h1>
+    <p class="mt-2 text-lg text-navy-700">{x.intro}</p>
+    <p class="mt-1 text-sm text-navy-600">Reglas revisadas el <time datetime={LAST_UPDATED}>{fecha(LAST_UPDATED)}</time> en los textos oficiales · <a href={route('method', lang)} class="underline">Cómo calculamos</a> · <a href={route('about', lang)} class="underline">Sobre nosotros</a></p>
+  </header>
+  <div data-outil><HomeTool client:load p={{ hnc: MX.hnc }} ciudades={CIUDADES} festivos={FESTIVOS} methodHref={route('method', lang)} calMx={r('calendario-hoy-no-circula')} calCo={r('calendario-pico-y-placa')} contHref={r('contingencia-ambiental')} /></div>
+  <Clamp text={x.resume} lang={lang} id="clamp-home" sentences={2} class="my-8" />
+  <section class="prose prose-slate max-w-none prose-headings:font-serif">
+    <h2>Quién no circula hoy y mañana</h2>
+  </section>
+  <TableroHoy client:load p={{ hnc: MX.hnc }} ciudades={CIUDADES} festivos={FESTIVOS} links={links} />
+  <section class="prose prose-slate mt-10 max-w-none prose-headings:font-serif">
+    <h2>Las normas que aplicamos, con su vigencia</h2>
+    <p>Cada respuesta cita su texto. Cuando una vigencia termina sin que la autoridad publique la siguiente, la herramienta deja de responder para esas fechas.</p>
+  </section>
+  <ol data-chrome class="mt-4 divide-y divide-navy-200 border-y border-navy-200">
+    {normas.map((n) => <li class="grid gap-1 py-3 sm:grid-cols-[12rem_minmax(0,1fr)_14rem] sm:gap-4"><span class="font-semibold text-navy-900">{n.lugar}</span><a href={n.src} target="_blank" rel="nofollow noopener noreferrer" class="text-sm text-accent-700 underline">{n.norma}</a><span class="text-sm text-navy-700">{n.vig}</span></li>)}
+  </ol>
+  <div class="mt-10 grid gap-8 md:grid-cols-2">
+    <section>
+      <h2 class="font-serif text-2xl font-bold text-navy-900">México: Hoy No Circula y verificación</h2>
+      <ul data-chrome class="mt-3 space-y-2">{mxPages.map((p) => <li><a href={route(p.id, lang)} class="font-medium text-accent-700 hover:underline">{p.nav}</a><span class="block text-sm text-navy-700">{p.card}</span></li>)}</ul>
+    </section>
+    <section>
+      <h2 class="font-serif text-2xl font-bold text-navy-900">Colombia: pico y placa</h2>
+      <ul data-chrome class="mt-3 space-y-2">{coPages.map((p) => <li><a href={route(p.id, lang)} class="font-medium text-accent-700 hover:underline">{p.nav}</a><span class="block text-sm text-navy-700">{p.card}</span></li>)}</ul>
+    </section>
+  </div>
+  <section class="prose prose-slate mt-10 max-w-none prose-headings:font-serif">
+    <h2>Para entender las reglas</h2>
+    {sections.map((s) => <details class="fold not-prose"><summary><h3 class="fold-h">{s.title}</h3></summary><div class="prose prose-slate max-w-none pb-4"><Fragment set:html={s.html} /></div></details>)}
+  </section>
+</PageLayout>
