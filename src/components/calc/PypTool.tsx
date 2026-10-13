@@ -67,9 +67,8 @@ export default function PypTool({ ciudades, festivos, city = 'bogota', lockCity 
         {lockCity ? <LockedField label="Ciudad" value={c.nombre} help={c.depto} /> : <SelectField id={`${idPrefix}-ciudad`} label="Ciudad" value={slug} onChange={setSlug} options={opts} />}
         <SelectField id={`${idPrefix}-placa`} label={digLabel} value={String(digit)} onChange={(x) => setDigit(Number(x))} options={digitOptions(vehic === 'moto' && c.motos?.digito === 'primero' ? 'Empieza en' : 'Termina en')} />
         {c.motos ? <Toggle id={`${idPrefix}-veh`} label="Vehículo" value={vehic} onChange={(x) => setVeh(x as Vehiculo)} options={[{ value: 'carro', label: 'Carro' }, { value: 'moto', label: 'Moto' }]} /> : <LockedField label="Vehículo" value="Carro particular" help={c.motosNota} />}
-        <LockedField label="Norma aplicada" value={c.decreto.split(' (')[0]} help={`Datos comprobados hasta el ${fmtFecha(c.vigencia.hasta)}`} />
       </form>
-      <Verdict label={`${manana ? 'Mañana' : 'Hoy'} en ${c.nombre}, placa ${vehic === 'moto' ? 'de moto ' : ''}${digit}`} value={v} tone={tone} sub={sub} methodHref={methodHref} note={`${c.decreto}.`}>
+      <Verdict label={`${manana ? 'Mañana' : 'Hoy'} en ${c.nombre}, placa ${vehic === 'moto' ? 'de moto ' : ''}${digit}`} value={v} tone={tone} sub={sub} methodHref={methodHref} note={`${c.decreto}. Datos comprobados hasta el ${fmtFecha(c.vigencia.hasta)}.`}>
         <Rows rows={rows} />
         {c.nota && <p className="mt-2 text-sm text-navy-800">{c.nota}</p>}
         {calHref && <p className="mt-2 text-sm"><a className="font-medium text-accent-700 underline" href={calHref}>Ver el calendario del mes</a></p>}
