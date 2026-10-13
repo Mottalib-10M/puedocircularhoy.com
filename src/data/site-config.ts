@@ -1,5 +1,5 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://latam-circulacion.example";
+export const SITE_URL = "https://puedocircularhoy.com";
 export const SITE_NAMES: Record<string, string> = {"es": "¿Puedo circular hoy?"};
 export const LANG_TAGS: Record<string, string> = {"es": "es-MX"};
 export const OG_LOCALES: Record<string, string> = {"es": "es_MX"};
@@ -16,7 +16,7 @@ export const AUTHOR_DESC: Record<string, string> = {"es": "Radif Partners public
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"es": ["Programa Hoy No Circula", "Contingencias ambientales en el Valle de México", "Verificación vehicular", "Pico y placa en Colombia"]};
-export const CONTACT_EMAIL = "contacto@latam-circulacion.example";
+export const CONTACT_EMAIL = "contacto@puedocircularhoy.com";
 export const THEME_COLOR = '#0B5D47';
 export const LOGO_SYMBOL = 'PC';
 export const BING_VERIFY_CODE = '';

@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://latam-circulacion.example/sitemap-index.xml
+Sitemap: https://puedocircularhoy.com/sitemap-index.xml
