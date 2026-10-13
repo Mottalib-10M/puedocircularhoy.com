@@ -1,5 +1,5 @@
 import { definePage } from '../../lib/page-types';
-import { MX, digitosColor, digits, horas24, verifMesesTxt, listOf, fecha, mxn, multaVerifPesos } from '../../lib/kit';
+import { P, MX, digitosColor, digits, horas24, verifMesesTxt, listOf, fecha, mxn, multaVerifPesos } from '../../lib/kit';
 
 const D = digitosColor('rojo');
 const H = horas24(MX.hnc.horas);
@@ -22,7 +22,7 @@ export default definePage({
   toolProps: { digit: 3, holo: '1' },
   faqs: [
     { q: '¿Qué engomado no circula el miércoles?', a: `El rojo, que corresponde a las placas terminadas en ${digits(D)}. Con holograma 1 o 2 no circulan de ${H}. La terminación 3 es non y la 4 es par, así que con holograma 1 sus sábados de descanso son distintos: el 3 descansa el primer y tercer sábado, el 4 el segundo y el cuarto.` },
-    { q: 'Tengo engomado rojo y no he verificado, ¿qué pasa en noviembre?', a: `Si el periodo de ${listOf(V2)} terminó sin verificar, tu auto se trata como holograma 2 hasta que lo hagas: descansa el miércoles y todos los sábados. Para verificar fuera de plazo hay que pagar antes la multa extemporánea de ${mxn(multaVerifPesos(), 0)} con la línea de captura de Finanzas de la CDMX; el pago vale 30 días naturales.` },
+    { q: 'Tengo engomado rojo y no he verificado, ¿qué pasa en noviembre?', a: `Si el periodo de ${listOf(V2)} terminó sin verificar, tu auto se trata como holograma 2 hasta que lo hagas: descansa el miércoles y todos los sábados. Para verificar fuera de plazo hay que pagar antes la multa extemporánea de ${mxn(multaVerifPesos(), 0)} con la línea de captura de Finanzas de la CDMX; el pago vale ${P.mx.multaExtemporaneaVigenciaDias} días naturales.` },
     { q: '¿Un holograma 0 rojo circula el miércoles de contingencia?', a: 'No. Con contingencia ambiental activa, el Programa de Contingencias de 2019 deja sin circular entre semana a los hologramas 0 y 00 cuya terminación tiene restricción ese día en el Hoy No Circula. El miércoles es el día del rojo, así que un 0 o 00 con placa terminada en 3 o 4 no sale ese día.' },
   ],
   body: (h) => `
@@ -30,7 +30,7 @@ export default definePage({
 <p>El calendario de verificación avanza un color por mes y cada color tiene dos meses. En el segundo semestre de 2026 al rojo le tocaron ${listOf(V2)}, así que a mediados de octubre muchos dueños de autos rojos descubren que les queda poco. El verificentro asigna cita en línea y en los últimos días del periodo las citas escasean. El simulador de ${h.a('verificacion-vehicular', 'verificación vehicular')} dice cuántos días quedan y lo que cuesta llegar tarde.</p>
 ${h.table(['Situación', 'Miércoles', 'Sábados'], [['Holograma 1 vigente', 'No circula', 'Dos al mes, según par o non'], ['Holograma 2 vigente', 'No circula', 'Ninguno'], ['Sin verificar a tiempo', 'No circula', 'Ninguno (se trata como holograma 2)'], ['Holograma 0 o 00 vigente', 'Circula', 'Circula']], `Engomado rojo, terminación ${digits(D)}, sin contingencia.`)}
 <h2>Si te paran un miércoles</h2>
-<p>Circular en tu día cuesta entre 20 y 30 UMA según el artículo 47 del Reglamento de Tránsito, y la SEDEMA puede sumar su propia sanción de 20 UMA por circular en día restringido. Las cifras están en ${h.a('multa-hoy-no-circula', 'multa por Hoy No Circula')}. Los demás días: ${h.a('hoy-no-circula-lunes', 'lunes')}, ${h.a('hoy-no-circula-martes', 'martes')}, ${h.a('hoy-no-circula-jueves', 'jueves')}, ${h.a('hoy-no-circula-viernes', 'viernes')}.</p>
+<p>Circular en tu día cuesta entre ${P.mx.multaHncVeces[0]} y ${P.mx.multaHncVeces[2]} UMA según el artículo 47 del Reglamento de Tránsito, y la SEDEMA puede sumar su propia sanción de ${P.mx.verif.multaUma} UMA por circular en día restringido. Las cifras están en ${h.a('multa-hoy-no-circula', 'multa por Hoy No Circula')}. Los demás días: ${h.a('hoy-no-circula-lunes', 'lunes')}, ${h.a('hoy-no-circula-martes', 'martes')}, ${h.a('hoy-no-circula-jueves', 'jueves')}, ${h.a('hoy-no-circula-viernes', 'viernes')}.</p>
 `,
   related: ['hoy-no-circula-martes', 'hoy-no-circula-jueves', 'verificacion-vehicular', 'multa-verificacion-extemporanea', 'multa-hoy-no-circula'],
   sources: ['hnc_decreto', 'verif_2s2026', 'pcaa_2019', 'reglamento_transito'],

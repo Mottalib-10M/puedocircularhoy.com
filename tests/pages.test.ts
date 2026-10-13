@@ -38,6 +38,7 @@ const faqCheck = (faqs: Array<{ q: string; a: string }>, min: number, max: numbe
 const clean = (text: string) => {
   for (const b of BANNED) expect(text, String(b)).not.toMatch(b);
   expect(text).not.toMatch(/NaN|undefined|\[object|Infinity|null\b/);
+  expect(text, "marqueur ${...} non rendu (chaîne entre apostrophes)").not.toMatch(/\$\{/);
 };
 const minis = (html: string) => { for (const m of html.matchAll(/<!--mini:([A-Za-z0-9_-]+)(?:\|([A-Za-z0-9+/=]+))?-->/g)) { expect(MINIS[m[1]], m[1]).toBeTruthy(); const arg = m[2] ? Buffer.from(m[2], 'base64').toString('utf8') : undefined; const spec = MINIS[m[1]](arg); const out = spec.run(Object.fromEntries(spec.inputs.map((i) => [i.id, i.def])), '2026-10-13'); expect(out.head[1], m[1]).not.toMatch(/NaN|undefined/); } };
 
