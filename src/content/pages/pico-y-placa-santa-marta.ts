@@ -13,7 +13,7 @@ export default definePage({
   nav: 'Santa Marta',
   card: 'Decreto 213 de 2026: tres franjas para los carros de Santa Marta, día entero para los de afuera.',
   title: 'Pico y placa Santa Marta 2026: horarios y carros de afuera',
-  description: `Pico y placa en Santa Marta 2026 (Decreto 213): ${sem.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}. Tres franjas para carros locales, horario continuo para los de otra ciudad.`,
+  description: `Pico y placa en Santa Marta 2026 (Decreto 213): ${sem.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}; tres franjas para carros locales, día entero para foráneos.`,
   h1: 'Pico y placa en Santa Marta',
   intro: 'El horario depende de dónde está matriculado el carro.',
   resume: `En Santa Marta el pico y placa lo regula el Decreto 213 del 8 de mayo de 2026, que rige seis meses desde su publicación, es decir hasta comienzos de noviembre de 2026; la herramienta lo aplica hasta el ${fecha(C.vigencia.hasta)}. La tabla es ${sem.map(([d, xs]) => `${d} ${digits(xs)}`).join(', ')}, por el último número de la placa, para automóviles, camperos, camionetas y microbuses particulares. Lo singular es el horario: los carros matriculados en Santa Marta tienen restricción en tres franjas, de ${horario(C.carro.horas)}, mientras que los matriculados en otra ciudad la tienen de 7:00 a. m. a 8:00 p. m. sin interrupción. El día de llegada, quien muestra el recibo del peaje de Neguanje, Tasajera o Tucurinca circula libre. No se aplica en festivos, y los eléctricos e híbridos están exentos. La medida rige dentro del anillo vial que forman la carrera 1, el Batallón Córdoba, el cerro Ziruma, la Troncal del Caribe y la vía alterna.`,

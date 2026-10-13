@@ -14,7 +14,7 @@ export default definePage({
   nav: 'Holograma 2',
   card: `Modelos ${HO['2'].modeloHasta} y anteriores, foráneos sin holograma y autos sin verificar: un día y todos los sábados.`,
   title: 'Holograma 2 2026: no circula ningún sábado ni un día',
-  description: `Holograma 2 en 2026: no circula un día entre semana según su engomado ni ningún sábado del mes, de ${H}, y es el primero en quedarse en casa en contingencia.`,
+  description: `Holograma 2 en 2026: no circula un día entre semana según su engomado ni ningún sábado, de ${H}, y es el primero en quedarse en casa en contingencia.`,
   h1: 'Holograma 2: el más restringido',
   intro: 'Un día entre semana y todos los sábados, y fuera de circulación en cualquier contingencia.',
   resume: `Con holograma 2 un auto no circula un día entre semana, el de su engomado, ni ningún sábado del mes, incluido el quinto, de ${H}. En octubre de 2026, que tiene ${nSab} sábados, eso suma ${nSab} sábados sin auto además de cuatro o cinco días entre semana. El holograma 2 corresponde a los autos de gasolina modelo ${HO['2'].modeloHasta} y anteriores que cumplen sus límites de emisiones, y a los diésel que solo alcanzan sus límites más altos. Pero la misma regla se aplica a otros vehículos sin ese holograma: los autos de otros estados sin un holograma que la Ciudad de México reconozca, los que no verificaron a tiempo, aunque paguen la multa, los autos nuevos después de 30 días sin verificar y los permisos para circular sin placas. En contingencia, Fase I o Fase II, ningún holograma 2 circula, cualquiera que sea su terminación.`,

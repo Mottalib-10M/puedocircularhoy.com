@@ -13,7 +13,7 @@ export default definePage({
   nav: 'Pico y Placa Solidario',
   card: 'Valores base 2026 en Bogotá, factor por matrícula y cómo se tramita el permiso.',
   title: 'Pico y Placa Solidario 2026: valor por día, mes y semestre',
-  description: `Pico y Placa Solidario 2026 en Bogotá: valor base de ${cop(S.dia)} por día, ${cop(S.mes)} por mes y ${cop(S.semestre)} por seis meses, más factores. Simula tu permiso.`,
+  description: `Pico y Placa Solidario 2026 en Bogotá: valor base de ${cop(S.dia)} por día, ${cop(S.mes)} por mes y ${cop(S.semestre)} por seis meses, más factores. Simula tu permiso aquí.`,
   h1: 'Pico y Placa Solidario en Bogotá',
   intro: 'Pagar para circular en tu día de restricción: cuánto cuesta en 2026 y qué lo encarece.',
   resume: `El Pico y Placa Solidario es el permiso que vende la Alcaldía de Bogotá para circular sin la restricción de pico y placa durante un día, un mes o seis meses. Con la Resolución 120963 de 2026 de la Secretaría Distrital de Movilidad, los valores base, actualizados con el IPC, son ${cop(S.dia)} por un día, ${cop(S.mes)} por un mes y ${cop(S.semestre)} por seis meses. Ese valor base no es el precio final: se multiplica por factores que dependen del avalúo, el modelo, el combustible y el municipio de matrícula del vehículo. El factor de los carros matriculados fuera de Bogotá subió en 2026 de ${num(S.factorAntes, 'co', 1)} a ${num(S.factorFuera, 'co', 1)}, de modo que un carro de Chía o de Soacha paga la mitad más sobre la base. El trámite se hace solo en movilidadbogota.gov.co y se paga por PSE; no lo venden gestores ni terceros. Con el permiso vigente, el carro circula de ${horario(B.carro.horas)} todos los días hábiles.`,

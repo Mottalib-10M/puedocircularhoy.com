@@ -13,7 +13,7 @@ export default definePage({
   nav: 'Hoy No Circula mañana',
   card: 'La consulta de la víspera: tu placa mañana y a qué hora sale el aviso de contingencia.',
   title: 'Hoy No Circula mañana 2026: ¿circula tu auto? Consulta',
-  description: `Hoy No Circula mañana 2026: elige tu terminación y tu holograma y sabe la víspera si circulas, de ${H}, y a qué hora publica la CAMe la contingencia del día siguiente.`,
+  description: `Hoy No Circula mañana 2026: elige terminación y holograma y sabe la víspera si circulas, de ${H}, y a qué hora anuncia la CAMe una contingencia.`,
   h1: 'Hoy No Circula mañana',
   intro: 'La herramienta responde directamente para mañana, con la fecha de la Ciudad de México.',
   resume: `Para saber si tu auto circula mañana basta con la terminación de la placa y el holograma: la regla ordinaria del Hoy No Circula no cambia de un día a otro y se puede calcular con días de anticipación, de ${H}. Lo que no se sabe con anticipación es la contingencia ambiental. La Comisión Ambiental de la Megalópolis emite boletines a las ${listOf(B)}, y cuando activa una fase la restricción adicional empieza a las 5:00 del día siguiente; el aviso preventivo por ozono sale entre las 14:00 y las 15:00. Por eso la consulta de la víspera tiene dos partes: la respuesta ordinaria, que da la herramienta, y el comunicado de la tarde, que hay que mirar. Si la CAMe activó la contingencia, marca la fase en la herramienta y elige la terminación o el engomado que diga el comunicado.`,

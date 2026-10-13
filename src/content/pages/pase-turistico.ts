@@ -14,7 +14,7 @@ export default definePage({
   nav: 'Pase Turístico y autos foráneos',
   card: `Gratis, 14 días o dos de 7 por semestre, modelos ${PS.modeloMin} en adelante, sin placas de la megalópolis.`,
   title: 'Pase Turístico CDMX 2026: autos foráneos y Hoy No Circula',
-  description: `Pase Turístico 2026 para autos de otros estados: gratis, 14 días o dos de 7 por semestre, modelos ${PS.modeloMin} y posteriores. Sin él, tu auto foráneo descansa como holograma 2.`,
+  description: `Pase Turístico 2026 para autos de otros estados: gratis, 14 días o dos de 7 por semestre, modelos ${PS.modeloMin} en adelante. Sin él, tu auto descansa como holograma 2.`,
   h1: 'Pase Turístico y autos de otros estados',
   intro: 'Cómo circula en la Ciudad de México un auto con placas de fuera, con pase y sin pase.',
   resume: `Un auto con placas de otro estado que no trae un holograma reconocido por la Ciudad de México se trata como holograma 2: no circula el día de su engomado ni ningún sábado, y además, de lunes a viernes, no circula de ${fm0} a ${fm1}. El Pase Turístico evita esas restricciones fuera de contingencia. Es gratuito, se pide en paseturistico.cdmx.gob.mx y se puede obtener una vez por semestre con vigencia de 14 días, o dos veces por semestre con 7 días cada una, para autos particulares de hasta ${PS.antiguedadMax} años, es decir modelos ${PS.modeloMin} y posteriores. No se genera para placas de la Ciudad de México, el Estado de México, Hidalgo, Morelos, Puebla, Querétaro ni Tlaxcala, cuyos hologramas ya reconoce la capital; para Guanajuato rige un convenio. En contingencia ambiental, el auto con pase se trata otra vez como holograma 2 y no circula.`,

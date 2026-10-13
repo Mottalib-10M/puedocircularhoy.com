@@ -14,7 +14,7 @@ export default definePage({
   nav: 'Cartagena',
   card: 'Horario en dos franjas para carros, de 5 a. m. a 11 p. m. para motos, y rotación por periodos.',
   title: 'Pico y placa Cartagena 2026: horario, motos y rotación',
-  description: `Pico y placa en Cartagena 2026 (Decreto 0015): carros de ${horario(C.carro.horas)}, motos de ${horario(C.motos!.horas)}. Rotación oficial y aviso del cambio de octubre.`,
+  description: 'Pico y placa en Cartagena 2026 (Decreto 0015): carros en dos franjas, mañana y tarde, motos casi todo el día, con la rotación oficial y el cambio de octubre.',
   h1: 'Pico y placa en Cartagena',
   intro: 'Dos franjas cortas para los carros, un día casi entero para las motos.',
   resume: `En Cartagena el pico y placa de carros particulares y motos lo fija el Decreto 0015 de 2026 del Distrito, que aplica el DATT por periodos de rotación. Los carros tienen restricción en dos franjas, de ${horario(C.carro.horas)}, y las motos casi todo el día, de ${horario(C.motos!.horas)}, de lunes a viernes, sin fines de semana ni festivos. La rotación oficial que leímos rigió del ${fecha(C.vigencia.desde)} al ${fecha(C.vigencia.hasta)}: ${sem.map(([d, xs]) => `${d} ${digits(xs)}`).join(', ')}, igual para carros y motos por el último número. El Distrito anunció el 6 de octubre de 2026 un cambio de rotación, pero no pudimos leer el texto oficial: la página oficial de la Alcaldía no responde a nuestras consultas. Hasta leerlo, la herramienta responde «rotación no publicada» después del 2 de octubre en lugar de copiar la tabla de la prensa. La multa es la C.14, ${cop(C14)} en 2026.`,

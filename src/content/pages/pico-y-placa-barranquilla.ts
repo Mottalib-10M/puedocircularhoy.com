@@ -12,7 +12,7 @@ export default definePage({
   nav: 'Barranquilla',
   card: 'Sin pico y placa general para particulares en 2026; medidas de Carnaval y zona de motos en el centro.',
   title: 'Pico y placa Barranquilla 2026: sin restricción general',
-  description: 'Pico y placa en Barranquilla 2026: no hay restricción general para carros particulares; solo medidas temporales de Carnaval y una zona del centro vedada a motos.',
+  description: 'Pico y placa en Barranquilla 2026: no hay restricción general para carros particulares; solo medidas temporales de Carnaval y una zona del centro sin motos.',
   h1: 'Pico y placa en Barranquilla',
   intro: 'La pregunta más buscada tiene una respuesta corta: los carros particulares no tienen pico y placa permanente.',
   resume: `Barranquilla no tiene en 2026 un pico y placa permanente para carros particulares. Las medidas que la Alcaldía decretó este año fueron temporales: el Decreto 0036 del 26 de enero de 2026 restringió a los particulares en la Vía 40 durante el montaje de los palcos del Carnaval, hasta que la Resolución 0012 de 2026 la levantó el 19 de febrero, y estableció un pico y placa en toda la ciudad del viernes 13 al lunes 16 de febrero, los días del Carnaval. Para las motos tampoco hay pico y placa, pero el Decreto 0703 del 30 de octubre de 2025 les prohíbe circular por un perímetro del centro, entre la calle 30, la carrera 38, la calle 45 y la carrera 46, hasta el 31 de octubre de 2026. Los taxis tuvieron su restricción levantada por el Decreto 0450 de 2025. Si un decreto nuevo crea una restricción, la herramienta lo dirá con su fecha; hoy responde que no hay medida.`,

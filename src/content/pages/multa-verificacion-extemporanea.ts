@@ -12,7 +12,7 @@ export default definePage({
   nav: 'Multa por verificar tarde',
   card: `${VERIF.multaUma} UMA en 2026, ${dias} días para verificar tras pagarla y el Hoy No Circula mientras tanto.`,
   title: 'Multa verificación extemporánea 2026: monto, pago y plazos',
-  description: `Multa por verificación extemporánea 2026 en la CDMX: ${VERIF.multaUma} UMA, ${mxn(multaVerifPesos(), 0)}, válida ${dias} días; mientras no verificas, tu auto se trata como holograma 2.`,
+  description: `Multa por verificación extemporánea 2026 en la CDMX: ${VERIF.multaUma} UMA, ${mxn(multaVerifPesos(), 0)}, válida ${dias} días; mientras no verificas, tu auto queda como holograma 2 en el programa.`,
   h1: 'Multa por verificación extemporánea',
   intro: 'Qué pagar, en qué orden y qué pasa con el Hoy No Circula si se te pasó el periodo.',
   resume: `Si el periodo de verificación de tu engomado terminó sin que verificaras, en la Ciudad de México tienes que pagar primero la multa por verificación extemporánea, de ${VERIF.multaUma} veces la UMA, es decir ${mxn(multaVerifPesos(), 0)} con la UMA de 2026, y después verificar dentro de los ${dias} días naturales siguientes al pago, que es el tiempo que vale. La verificación se paga aparte, ${mxn(costoVerifPesos(), 0)} con IVA, así que llegar tarde cuesta en total ${mxn(multaVerifPesos() + costoVerifPesos(), 0)}. El pago de la multa no exime del Hoy No Circula: mientras el auto no tenga holograma vigente, el programa de verificación lo trata como holograma 2, sin circular su día entre semana ni ningún sábado. La línea de captura se genera en el portal de la Secretaría de Administración y Finanzas. Los autos nuevos con holograma 00 no pagan esta multa en los dos primeros años después de su primera venta.`,

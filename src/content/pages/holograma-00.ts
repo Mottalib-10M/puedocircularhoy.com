@@ -13,7 +13,7 @@ export default definePage({
   nav: 'Holograma 00',
   card: `Circula diario y vale hasta ${HO['00'].vigenciaAnios} años; deja de circular en contingencia el día de su engomado.`,
   title: 'Holograma 00 2026: Hoy No Circula, vigencia y contingencia',
-  description: `Holograma 00 en 2026: circula todos los días sin Hoy No Circula, vale hasta ${HO['00'].vigenciaAnios} años y solo descansa con contingencia ambiental. Revisa tu placa hoy.`,
+  description: `Holograma 00 en 2026: circula todos los días sin Hoy No Circula, vale hasta ${HO['00'].vigenciaAnios} años y solo descansa con contingencia ambiental. Revisa tu placa y tu día.`,
   h1: 'Holograma 00: cuándo circula y cuándo no',
   intro: 'El mejor holograma del programa: libre de Hoy No Circula, salvo en contingencia.',
   resume: `El holograma 00 exenta al auto de todas las limitaciones del Programa Hoy No Circula: circula de lunes a domingo, a cualquier hora, mientras no haya contingencia ambiental. Lo da el verificentro como incentivo a los vehículos de gasolina, diésel, gas o híbridos suaves que figuran en la lista de la SEDEMA por sus emisiones homologadas, y su vigencia es de hasta ${HO['00'].vigenciaAnios} años; un auto nuevo no paga multa por verificación extemporánea en los dos primeros años tras su primera venta. La única situación en la que un 00 deja de circular es la contingencia ambiental: entre semana descansa el día de su engomado, de ${H}, y en sábado o domingo el engomado que anuncie la Comisión Ambiental de la Megalópolis. La herramienta ya tiene el 00 seleccionado: marca la contingencia para ver tu caso.`,

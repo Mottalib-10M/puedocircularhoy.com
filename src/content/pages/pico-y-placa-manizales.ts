@@ -12,7 +12,7 @@ export default definePage({
   nav: 'Manizales',
   card: 'Sin pico y placa para particulares desde el 16 de septiembre de 2026, tras la medida temporal.',
   title: 'Pico y placa Manizales 2026: levantado desde septiembre',
-  description: 'Pico y placa en Manizales 2026: la medida temporal que siguió al sismo de agosto se levantó el 16 de septiembre; hoy los carros particulares circulan sin restricción.',
+  description: 'Pico y placa en Manizales 2026: la medida temporal que siguió al sismo de agosto se levantó el 16 de septiembre; hoy los carros particulares circulan libres.',
   h1: 'Pico y placa en Manizales',
   intro: 'Después de un mes de restricción por el sismo, Manizales volvió a no tener pico y placa para particulares.',
   resume: `Manizales no tiene pico y placa para carros particulares en tiempos normales, y así está otra vez desde el miércoles ${fecha(C.vigencia.desde)}. Tras el sismo del 10 de agosto de 2026, la Alcaldía impuso una restricción temporal con el Decreto Extraordinario 012 del 13 de agosto: desde el 14 de agosto, de 5:00 a. m. a 10:00 p. m., incluidos fines de semana y festivos, con las motos exentas, para aliviar las vías afectadas. El Decreto 0292 de 2026 la prorrogó hasta el 15 de septiembre, y al día siguiente la Alcaldía la levantó. La herramienta responde por eso que no hay pico y placa en Manizales. Si las obras de reparación obligan a una medida nueva, la cargaremos con su decreto y sus fechas. Mientras tanto, los cierres puntuales de vías por obras no dependen del número de la placa y los anuncia la Secretaría de Movilidad.`,

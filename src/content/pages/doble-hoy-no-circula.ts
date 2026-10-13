@@ -14,7 +14,7 @@ export default definePage({
   nav: 'Doble Hoy No Circula',
   card: 'Quién no circula en contingencia: holograma 2, la mitad del 1 y el engomado del día para 0 y 00.',
   title: 'Doble Hoy No Circula 2026: quién no circula en contingencia',
-  description: `Doble Hoy No Circula 2026: no circulan los hologramas 2, la mitad de los 1 por terminación y los 0 y 00 del engomado del día, de ${H}. Revisa tu placa en Fase I o II.`,
+  description: `Doble Hoy No Circula 2026: no circulan los hologramas 2, la mitad de los 1 y los 0 y 00 del engomado del día, de ${H}. Revisa tu placa en Fase I o II.`,
   h1: 'Doble Hoy No Circula: quién se queda en casa',
   intro: 'La regla de la contingencia, holograma por holograma, entre semana y en fin de semana.',
   resume: `Cuando la CAMe activa una contingencia ambiental, al Hoy No Circula ordinario se suma una restricción adicional, de ${H}, que la gente llama Doble Hoy No Circula. Según la Tabla 3 del programa de 2019, no circulan todos los vehículos con holograma 2; los holograma 1 de terminación par o non, alternando con base en la última activación; y los hologramas 0 y 00 cuya terminación tiene restricción ese día en el Hoy No Circula ordinario. En sábado o domingo, para los 0 y 00 la CAMe elige el engomado empezando por el amarillo y siguiendo el orden ${listOf([...orden])}. Los autos de otros estados sin holograma 00, 0 o exento, y los que tienen Pase Turístico, se tratan como holograma 2. Los taxis solo pueden circular de 5:00 a ${C.taxis_hasta}. En Fase II, además, la mitad de las motos deja de circular por terminación. Los eléctricos, los híbridos exentos y los vehículos de emergencia siguen circulando.`,

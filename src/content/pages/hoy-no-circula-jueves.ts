@@ -16,7 +16,7 @@ export default definePage({
   nav: 'Jueves: engomado verde',
   card: `Terminación ${digits(D)}: el jueves, y la verificación que se abre en ${V2[0]}.`,
   title: `Hoy No Circula jueves 2026: engomado verde, placas ${digits(D)}`,
-  description: `Hoy No Circula los jueves 2026: no circulan los autos de engomado verde, terminación ${digits(D)}, con holograma 1 o 2, de ${H}. Verifican en ${listOf(V2)}.`,
+  description: `Hoy No Circula los jueves 2026: no circula el engomado verde, terminación ${digits(D)}, con holograma 1 o 2, de ${H}. Verifica en ${listOf(V2)}.`,
   h1: 'Hoy No Circula los jueves: engomado verde',
   intro: `Placas terminadas en ${digits(D)}: el jueves es tu día, y ${V2[0]} tu mes de verificar.`,
   resume: `Los jueves no circulan los autos de engomado verde, es decir con placa terminada en ${digits(D)}, que tienen holograma 1 o 2, de ${H}, en la Ciudad de México y su zona conurbada. Los hologramas 0, 00 y exento circulan el jueves salvo contingencia ambiental. El verde verifica en ${listOf(V2)} en el segundo semestre de 2026 y en ${listOf(V1)} en el primero, y su prórroga de quince días llega hasta el ${fecha(MX.verif.prorroga15.verde)}. Verificar a tiempo es lo que permite conservar o mejorar el holograma: un auto modelo ${P_0} o posterior que aprueba la prueba sale con holograma 0 y deja de tener Hoy No Circula. La verificación cuesta ${mxn(costoVerifPesos(), 0)} con IVA en 2026, y los reintentos tras un rechazo en el mismo verificentro son gratis.`,

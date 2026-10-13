@@ -13,7 +13,7 @@ export default definePage({
   nav: 'Villavicencio',
   card: 'Decreto 015 de 2026: dos franjas en el polígono del centro, hasta el 22 de diciembre.',
   title: 'Pico y placa Villavicencio 2026: polígono y horario hoy',
-  description: `Pico y placa en Villavicencio 2026 (Decreto 015): ${sem.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}, de ${horario(C.carro.horas)}, dentro del polígono.`,
+  description: `Pico y placa en Villavicencio 2026 (Decreto 015): ${sem.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}, en dos franjas, mañana y tarde, dentro del polígono.`,
   h1: 'Pico y placa en Villavicencio',
   intro: 'Restricción solo dentro del polígono del centro y solo en las horas de mayor tráfico.',
   resume: `En Villavicencio el pico y placa de 2026 lo fija el Decreto 015 de 2026, del ${fecha(C.vigencia.desde)} al ${fecha(C.vigencia.hasta)}, en el mismo polígono del centro que en 2025. Los carros particulares tienen restricción de lunes a viernes en dos franjas, de ${horario(C.carro.horas)}, según el último número de la placa: ${sem.map(([d, xs]) => `${d} ${digits(xs)}`).join(', ')}. Se puede circular por las vías que bordean el polígono, porque la medida solo cubre su interior. La sanción es la infracción C.14 con inmovilización. La Alcaldía anunció además una restricción excepcional de particulares el sábado 31 de octubre de 2026, Día de los Niños, que la herramienta no calcula porque no conocemos su horario. La página oficial no precisa qué ocurre los festivos ni con las motos: la herramienta supone, como en las demás ciudades, que el festivo no tiene pico y placa, y lo señala.`,

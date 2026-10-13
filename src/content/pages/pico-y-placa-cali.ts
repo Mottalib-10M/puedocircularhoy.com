@@ -15,7 +15,7 @@ export default definePage({
   nav: 'Cali',
   card: 'Segundo semestre de 2026: dos números por día, de 6:00 a. m. a 7:00 p. m., motos exceptuadas.',
   title: 'Pico y placa Cali hoy 2026: rotación del 2.º semestre',
-  description: `Pico y placa en Cali 2026, del 1 de julio al 31 de diciembre: ${tabla}, de ${horario(C.carro.horas)} continuo. Motos exceptuadas.`,
+  description: `Pico y placa en Cali 2026, segundo semestre: ${sem.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}, de ${horario(C.carro.horas).replace(/:00/g, '')} sin pausa, y las motos exceptuadas.`,
   h1: 'Pico y placa en Cali hoy',
   intro: 'Rotación del segundo semestre de 2026, del 1 de julio al 31 de diciembre, en el perímetro urbano.',
   resume: `En Cali el pico y placa del segundo semestre de 2026 restringe dos números por día hábil, de ${horario(C.carro.horas)} sin interrupción: ${tabla}. La Secretaría de Movilidad Distrital anunció la rotación el 23 de junio de 2026 y la aplica del ${fecha(C.vigencia.desde)} al ${fecha(C.vigencia.hasta)}; el proyecto de decreto publicado el 16 de junio la fija en el perímetro urbano, incluidos los vehículos que entran o salen de él, y deroga el decreto del primer semestre. No se aplica sábados, domingos ni festivos. Las motocicletas están exceptuadas, igual que los híbridos y eléctricos registrados como tales, la carga de cinco toneladas o más y los vehículos cuyo dueño paga la tasa por congestión del Acuerdo 0563 de 2023. La infracción es la C.14, ${cop(C14)} en 2026.`,

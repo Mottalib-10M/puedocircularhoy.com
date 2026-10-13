@@ -12,7 +12,7 @@ export default definePage({
   nav: 'Pico y placa en festivos',
   card: 'Los 18 festivos de 2026, la Ley Emiliani y qué ciudades restringen en sábado.',
   title: 'Pico y placa festivos 2026: lunes festivos y Ley Emiliani',
-  description: `Pico y placa en festivos 2026: ninguna de las ciudades cubiertas lo aplica en los ${FESTIVOS.length} festivos de la Ley 51 de 1983. Próximos: ${restantes.slice(0, 2).map((f) => fechaDia(f)).join(' y ')}.`,
+  description: `Pico y placa en festivos 2026: ninguna ciudad cubierta lo aplica en los ${FESTIVOS.length} festivos de la Ley 51 de 1983. Próximo: ${fechaDia(restantes[0])}; Bogotá: regional.`,
   h1: 'Pico y placa en días festivos',
   intro: 'El festivo se traslada al lunes y el pico y placa descansa con él.',
   resume: `Los ${FESTIVOS.length} festivos de 2026 en Colombia salen de la Ley 51 de 1983, la Ley Emiliani, que traslada al lunes siguiente siete fiestas fijas y tres móviles cuando no caen en lunes. En todas las ciudades que cubre la herramienta el decreto del pico y placa excluye los festivos: Bogotá habla de lunes a viernes excepto festivos, Medellín de días hábiles, Cali de sábados, domingos y feriados establecidos por la ley, y Pereira escribe que no regirá los festivos. Así, un lunes festivo no hay pico y placa urbano ni para carros ni para motos. Quedan en 2026 ${restantes.map((f) => fechaDia(f)).join(', ')}. El 8 de diciembre cae en martes y no se traslada, porque la Inmaculada Concepción no está en la lista de fiestas que se mueven. En Bogotá, el último día de cada puente rige el pico y placa regional de entrada a la ciudad, una medida distinta que la herramienta explica aparte.`,

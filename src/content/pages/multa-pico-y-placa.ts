@@ -12,7 +12,7 @@ export default definePage({
   nav: 'Multa por pico y placa',
   card: 'Infracción C.14 en 2026: valor en UVB, inmovilización, patios y descuentos por curso.',
   title: 'Multa pico y placa 2026: valor de la C.14 e inmovilización',
-  description: `Multa por pico y placa 2026 en Colombia: la infracción C.14 cuesta ${cop(C.multaC14)} en la tabla oficial, convertida a UVB, más la inmovilización del vehículo y los patios.`,
+  description: `Multa por pico y placa 2026 en Colombia: la infracción C.14 cuesta ${cop(C.multaC14)} en la tabla oficial, convertida a UVB, más la inmovilización y los patios.`,
   h1: 'Multa por pico y placa en 2026',
   intro: 'Cuánto cuesta circular en tu día de restricción y por qué el valor ya no sale del salario mínimo.',
   resume: `Circular en pico y placa es la infracción C.14 del artículo 131 de la Ley 769 de 2002, el Código Nacional de Tránsito: «transitar por sitios restringidos o en horas prohibidas por la autoridad competente», con inmovilización del vehículo. El texto la fija en ${num(C.smldvVeces, 'co')} salarios mínimos diarios, pero desde que la Ley 2294 de 2023 creó la Unidad de Valor Básico, las multas que se calculaban con el salario mínimo se cobran convertidas a UVB, y el Ministerio de Transporte lo recordó para 2026 en su concepto del 20 de febrero. Con la UVB de 2026, de ${cop(C.uvb2026)}, la tabla oficial de multas de la Alcaldía de Barranquilla fija la C.14 en ${cop(C.multaC14)}. A eso se suman la grúa y los días de patios, que cobra cada ciudad. Por eso un cálculo con el salario mínimo de 2026, ${cop(C.smmlv2026)}, da una cifra más alta que la que se cobra: no es la base vigente.`,

@@ -10,7 +10,7 @@ export default definePage({
   nav: 'Eléctricos e híbridos',
   card: 'La exención nacional de los eléctricos y las reglas locales para híbridos y gas.',
   title: 'Pico y placa eléctricos e híbridos 2026: quién está exento',
-  description: 'Pico y placa para eléctricos e híbridos 2026: los eléctricos están exentos por ley en todo el país; los híbridos dependen de Bogotá, Medellín, Cali o Pereira. Revisa tu caso.',
+  description: 'Pico y placa para eléctricos e híbridos 2026: los eléctricos están exentos por ley en el país; los híbridos dependen de la ciudad y del RUNT. Revisa el tuyo.',
   h1: 'Pico y placa para carros eléctricos e híbridos',
   intro: 'Eléctrico: exento en todo el país. Híbrido: depende de la ciudad y de lo que diga el RUNT.',
   resume: 'Los vehículos eléctricos y de cero emisiones están exentos del pico y placa en toda Colombia por el artículo 6 de la Ley 1964 de 2019, que los libra de cualquier restricción a la circulación que disponga la autoridad local, salvo las que se dicten por razones de seguridad. Los híbridos no tienen esa exención nacional: cada ciudad decide. Medellín y el Valle de Aburrá los exceptúan de forma automática cuando el RUNT registra un combustible como gasolina-eléctrico o diésel-eléctrico, junto con los vehículos a gas, hidrógeno o etanol. Cali exceptúa los híbridos y eléctricos parametrizados así en el registro. Bogotá exige que el híbrido sea de fábrica y que el propietario lo inscriba ante la Secretaría de Movilidad, que tiene veinte días hábiles para responder. Pereira y Santa Marta los exceptúan según la licencia de tránsito. En todos los casos, lo que cuenta es el combustible registrado, no lo que diga el concesionario.',

@@ -13,7 +13,7 @@ export default definePage({
   nav: 'Pico y placa regional',
   card: 'La entrada a Bogotá el último día de los puentes: franjas por placa par e impar.',
   title: 'Pico y placa regional Bogotá 2026: horarios del festivo',
-  description: `Pico y placa regional en Bogotá 2026: el lunes festivo entran las placas pares de ${R.pares[0]} a ${R.pares[1]} y las impares de ${R.impares[0]} a ${R.impares[1]} por nueve corredores.`,
+  description: `Pico y placa regional en Bogotá 2026: el lunes festivo entran las placas pares de ${R.pares[0]} a ${R.pares[1]} y las impares de ${R.impares[0]} a ${R.impares[1]} por nueve corredores viales.`,
   h1: 'Pico y placa regional de ingreso a Bogotá',
   intro: 'La regla del regreso de los puentes: a qué hora puedes entrar a Bogotá según tu placa.',
   resume: `El pico y placa regional ordena la entrada de vehículos a Bogotá el último día de los puentes festivos, o cuando la Administración Distrital lo establece. Entre las ${R.pares[0]} y las ${R.pares[1]} solo pueden ingresar los vehículos con placa terminada en número par, ${listOf(['0', '2', '4', '6', '8'])}, y entre las ${R.impares[0]} y las ${R.impares[1]}, los de placa impar. Fuera de esa ventana, por la mañana o por la noche, entran todos. La medida se aplica en los nueve corredores de ingreso a la ciudad: ${listOf(R.corredores)}. El 12 de octubre de 2026, lunes festivo, la Alcaldía la aplicó para todos los vehículos que circulaban por esos corredores. No se confunde con el pico y placa urbano de los días hábiles, que ese día no rige. Los festivos que quedan en 2026 son ${prox.map((f) => fechaDia(f)).join(', ')}.`,

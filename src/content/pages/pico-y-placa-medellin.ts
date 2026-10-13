@@ -15,7 +15,7 @@ export default definePage({
   nav: 'Medellín',
   card: 'Decreto 1490 de 2026: dos números por día, carros por el último y motos por el primero.',
   title: 'Pico y placa Medellín hoy 2026: carros, motos y rotación',
-  description: `Pico y placa en Medellín 2026 (Decreto 1490): ${tabla}, de ${horario(M.carro.horas)}. Carros por el último número, motos por el primero.`,
+  description: `Pico y placa en Medellín 2026 (Decreto 1490): ${sem.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}, de ${horario(M.carro.horas).replace(/:00/g, '')}; las motos, por el primer número.`,
   h1: 'Pico y placa en Medellín hoy',
   intro: 'Rotación del segundo semestre de 2026, vigente desde el lunes 3 de agosto en Medellín y el Valle de Aburrá.',
   resume: `En Medellín el pico y placa del segundo semestre de 2026 restringe dos números por día hábil, de ${horario(M.carro.horas)}: ${tabla}. Para carros, camionetas, camperos y motocarros cuenta el último número de la placa; para motos, mototriciclos, cuatriciclos y ciclomotores, el primero, con la misma tabla. La rotación la fija el Decreto 1490 del 30 de julio de 2026 y rige desde el lunes 3 de agosto de 2026; los diez municipios del Valle de Aburrá la acordaron en el Consejo Metropolitano de Movilidad, así que la tabla es la misma en Itagüí, Envigado, Bello o Sabaneta. No aplica en sábados, domingos ni festivos. Los vehículos a gas, eléctricos e híbridos eléctricos registrados así en el RUNT están exentos sin trámite, y circular en tu día cuesta ${cop(C14)} más la inmovilización.`,

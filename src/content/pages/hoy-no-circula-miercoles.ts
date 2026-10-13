@@ -14,7 +14,7 @@ export default definePage({
   nav: 'Miércoles: engomado rojo',
   card: `Terminación ${digits(D)}: el miércoles, y la verificación que vence al cerrar octubre.`,
   title: `Hoy No Circula miércoles 2026: engomado rojo, placas ${digits(D)}`,
-  description: `Hoy No Circula los miércoles 2026: no circulan los autos de engomado rojo, terminación ${digits(D)}, con holograma 1 o 2, de ${H}, y su verificación cierra en ${V2[1]}.`,
+  description: `Hoy No Circula los miércoles 2026: no circula el engomado rojo, terminación ${digits(D)}, con holograma 1 o 2, de ${H}; su verificación cierra en ${V2[1]}.`,
   h1: 'Hoy No Circula los miércoles: engomado rojo',
   intro: `Placas terminadas en ${digits(D)}: miércoles sin auto con holograma 1 o 2, y verificación en ${listOf(V2)}.`,
   resume: `Los miércoles no circulan los autos de engomado rojo, con placa terminada en ${digits(D)}, que tienen holograma 1 o 2, de ${H}. Con holograma 0, 00 o exento circulan, salvo un miércoles de contingencia ambiental, cuando los hologramas 0 y 00 de engomado rojo también se quedan. En el segundo semestre de 2026 el engomado rojo verifica en ${listOf(V2)}: el plazo vence el último día de ${V2[1]}, y la prórroga de quince días que prevé el programa, hasta el ${fecha(MX.verif.prorroga15.rojo)}, solo se concede en casos tasados, como un rechazo en los últimos siete días del periodo o una falla del sistema. Quien deja pasar el plazo paga la multa por verificación extemporánea, ${mxn(multaVerifPesos(), 0)} en 2026, y mientras no verifique su auto se trata como holograma 2: sin circular su día entre semana y ningún sábado.`,

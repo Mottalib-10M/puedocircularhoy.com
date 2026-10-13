@@ -17,7 +17,7 @@ export default definePage({
   nav: 'Bucaramanga',
   card: 'Rotación trimestral desde el 5 de octubre de 2026 y pico y placa también los sábados.',
   title: 'Pico y placa Bucaramanga hoy 2026: rotación y sábados',
-  description: `Pico y placa en Bucaramanga 2026: desde el 5 de octubre ${t4.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}, de ${horario(B.carro.horas)}, y sábados de ${horario(sab.horas)}.`,
+  description: `Pico y placa en Bucaramanga 2026: desde el 5 de octubre ${t4.map(([d, xs]) => `${d.slice(0, 2)} ${digits(xs)}`).join(', ')}, de ${horario(B.carro.horas).replace(/:00/g, '')}, y también los sábados.`,
   h1: 'Pico y placa en Bucaramanga hoy',
   intro: 'La única ciudad de la lista con pico y placa también los sábados, y con rotación cada trimestre.',
   resume: `En Bucaramanga la rotación del pico y placa cambia el primer lunes hábil de cada trimestre, según la Resolución 854 del 30 de diciembre de 2025 de la Dirección de Tránsito. Desde el lunes 5 de octubre de 2026 rige la cuarta y última rotación del año: ${t4.map(([d, xs]) => `${d} ${digits(xs)}`).join(', ')}, de ${horario(B.carro.horas)} en días hábiles. A diferencia de Bogotá, Medellín o Cali, los sábados también hay restricción, de ${horario(sab.horas)}, con dos números por sábado en orden consecutivo: en octubre de 2026, ${sabOct.map(([f, x]) => `${x} el ${f}`).join('; ')}. Los domingos y festivos no hay pico y placa. Quien matriculó un carro particular nuevo en Bucaramanga en 2026 puede pedir un año de exoneración con la Resolución 189 de 2026, y la multa es la infracción C.14, ${cop(C14)} en 2026, con inmovilización.`,

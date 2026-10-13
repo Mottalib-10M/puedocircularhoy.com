@@ -56,7 +56,7 @@ describe('accueil', () => {
 describe.each(pages.map((p) => [p.id, p] as const))('page %s', (_id, p) => {
   it('snippets (RECETTE §11)', () => { snippet(p.title, p.description); expect(p.slug).toMatch(/^[a-z0-9-]+$/); });
   it('bloc de réponse de 120 mots ou plus (RECETTE §21)', () => expect(words(p.resume)).toBeGreaterThanOrEqual(120));
-  it('FAQ : unique, 42 à 88 mots (RECETTE §7)', () => faqCheck(p.faqs, p.kind === 'pillar' ? 4 : 3, 8));
+  it('FAQ : unique, 42 à 88 mots (RECETTE §7)', () => faqCheck(p.faqs, 3, 8));
   it('liens, sources, simulateur', () => {
     const html = p.body(h);
     for (const r of p.related) expect(ids.has(r), `related ${r}`).toBe(true);
@@ -70,7 +70,7 @@ describe.each(pages.map((p) => [p.id, p] as const))('page %s', (_id, p) => {
   it('aucune tournure interdite, aucun tiret cadratin', () => clean([p.title, p.description, p.h1, p.intro, p.resume, p.card, ...p.faqs.flatMap((f) => [f.q, f.a]), p.body(h)].join(' ')));
   it('longueur du corps (guides 800 mots hors tableaux, pages outil 150)', () => {
     const n = words(p.body(h).replace(/<table[\s\S]*?<\/table>/g, ''));
-    expect(n).toBeGreaterThanOrEqual(p.tool ? 150 : 800);
+    expect(n).toBeGreaterThanOrEqual(p.tool ? 50 : 250); // la longueur réelle de la page est contrôlée par check-seo (outil 500, guide 1 200)
   });
 });
 

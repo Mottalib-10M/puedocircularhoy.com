@@ -15,7 +15,7 @@ export default definePage({
   nav: 'Martes: engomado rosa',
   card: `Terminación ${digits(D)}: el martes, y el engomado de la contingencia de septiembre de 2026.`,
   title: `Hoy No Circula martes 2026: engomado rosa, placas ${digits(D)}`,
-  description: `Hoy No Circula los martes 2026: no circulan los autos de engomado rosa, terminación ${digits(D)}, con holograma 1 o 2, de ${H}. Consulta tu placa para hoy y mañana.`,
+  description: `Hoy No Circula los martes 2026: no circula el engomado rosa, terminación ${digits(D)}, con holograma 1 o 2, de ${H}. Consulta tu placa para hoy y mañana.`,
   h1: 'Hoy No Circula los martes: engomado rosa',
   intro: `Placas terminadas en ${digits(D)}: el martes es tu día de descanso con holograma 1 o 2.`,
   resume: `Los martes no circulan los autos de engomado rosa, con placa terminada en ${digits(D)}, que tienen holograma 1 o 2, de ${H}, en la Ciudad de México y la zona metropolitana. Con holograma 0, 00 o exento, el martes es un día como cualquier otro mientras no haya contingencia. El rosa tuvo un papel en la contingencia del ${fechaDia(ej.aplica)} de 2026: era domingo, y la Comisión Ambiental de la Megalópolis eligió el engomado rosa para dejar sin circular a los hologramas 0 y 00, además de todos los hologramas 2 y de los holograma 1 de terminación non. Eso muestra lo que pasa en fin de semana: el engomado que descansa lo fija el comunicado y va rotando. En la verificación, el rosa verifica en ${listOf(V2)} en el segundo semestre de 2026, con prórroga solo en los casos que prevé el programa.`,

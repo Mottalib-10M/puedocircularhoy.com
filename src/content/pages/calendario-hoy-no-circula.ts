@@ -14,7 +14,7 @@ export default definePage({
   nav: 'Calendario Hoy No Circula',
   card: 'El mes entero de tu placa y tu holograma, con sábados y quintos sábados marcados.',
   title: 'Calendario Hoy No Circula 2026: tu placa día por día',
-  description: `Calendario Hoy No Circula 2026: elige mes, terminación y holograma y ve cada día sin circular, entre semana y sábados, de ${H}, con los quintos sábados marcados.`,
+  description: `Calendario Hoy No Circula 2026: elige mes, terminación y holograma y ve cada día sin circular, entre semana y sábados, con los quintos sábados libres.`,
   h1: 'Calendario Hoy No Circula',
   intro: 'Cada día del mes para tu placa y tu holograma, sin contingencias.',
   resume: `El calendario marca en rojo cada día del mes en que tu auto no circula de ${H}, según la terminación de la placa y el holograma. En noviembre de 2026, una placa terminada en 1 con holograma 1 tiene ${cuenta(1, '1')} días sin circular y con holograma 2 ${cuenta(1, '2')}; una terminada en 6, ${cuenta(6, '1')} y ${cuenta(6, '2')}. La diferencia sale de los sábados: el holograma 1 descansa dos sábados al mes según su paridad y el holograma 2 todos. Los meses con cinco sábados dan un sábado libre al holograma 1: en el último trimestre de 2026, ${s5.filter(([, n]) => n === 5).map(([m]) => m === '2026-10' ? 'octubre' : m === '2026-11' ? 'noviembre' : 'diciembre').join(' y ') || 'ningún mes'} los tiene. El calendario no incluye contingencias, porque se activan la víspera y nadie las puede anticipar. Los hologramas 0, 00 y exento aparecen libres todo el mes.`,

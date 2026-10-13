@@ -15,7 +15,7 @@ export default definePage({
   nav: 'Holograma 1',
   card: `Modelos ${HO['1'].modeloDesde} a ${HO['1'].modeloHasta}: un día entre semana y dos sábados al mes.`,
   title: 'Holograma 1 2026: Hoy No Circula entre semana y sábados',
-  description: `Holograma 1 en 2026: no circula un día entre semana según su engomado y dos sábados al mes, nones el 1.º y 3.º, pares el 2.º y 4.º, de ${H}. Consulta tu placa.`,
+  description: `Holograma 1 en 2026: no circula un día entre semana según su engomado ni dos sábados al mes, nones el 1.º y 3.º, pares el 2.º y 4.º. Consulta tu placa hoy.`,
   h1: 'Holograma 1: qué días no circula',
   intro: 'Un día entre semana y dos sábados al mes, según el engomado y si la terminación es par o non.',
   resume: `Con holograma 1 un auto no circula un día entre semana, el de su engomado, y dos sábados al mes, de ${H}. Los sábados se reparten por paridad: las terminaciones nones (1, 3, 5, 7, 9) descansan el primer y el tercer sábado del mes, y las pares (0, 2, 4, 6, 8) el segundo y el cuarto. Cuando el mes tiene cinco sábados, el quinto puede circular, salvo aviso contrario por la calidad del aire. En noviembre de 2026, por ejemplo, una placa non descansa ${non.join(' y ')}, y una par ${par.join(' y ')}. El holograma 1 se da a los autos de gasolina modelo ${HO['1'].modeloDesde} a ${HO['1'].modeloHasta} que cumplen los límites de emisiones, y a los más antiguos que cumplen los límites más estrictos de su tabla. En contingencia, la CAMe restringe además a la mitad de los holograma 1, por terminación par o non, alternando con la activación anterior.`,

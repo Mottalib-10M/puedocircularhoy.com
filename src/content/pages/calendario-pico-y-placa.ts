@@ -13,7 +13,7 @@ export default definePage({
   nav: 'Calendario del pico y placa',
   card: 'El mes entero de tu placa en tu ciudad, con festivos, sábados y cambios de rotación.',
   title: 'Calendario pico y placa 2026: tu placa mes a mes por ciudad',
-  description: 'Calendario del pico y placa 2026 por ciudad: elige el mes, tu ciudad y tu placa y ve cada día con restricción, con festivos, sábados de Bucaramanga y cambios de rotación.',
+  description: 'Calendario del pico y placa 2026: elige mes, ciudad y placa y ve cada día con restricción, con festivos, sábados de Bucaramanga y cambios de rotación.',
   h1: 'Calendario del pico y placa',
   intro: 'Todos los días del mes para tu placa, calculados con el decreto de tu ciudad.',
   resume: `El calendario marca, para el mes que elijas, cada día en que tu placa tiene pico y placa en tu ciudad, y los días libres por fin de semana o festivo. Los números cambian mucho de una ciudad a otra: en noviembre de 2026, con placa terminada en 1, hay ${rows.map(([, n, a]) => `${a} días de restricción en ${n}`).join(', ')}; con placa terminada en 6, ${rows.map(([, n, , b]) => `${b} en ${n}`).join(', ')}. La diferencia sale de los esquemas: Bogotá alterna par e impar todos los días hábiles, las demás ciudades fijan un día por semana y Bucaramanga suma algunos sábados. Noviembre tiene además ${fNov.length} festivos en lunes, ${fNov.map((f) => fechaDia(f)).join(' y ')}, que no cuentan. Si el mes elegido cruza el fin de la vigencia de una rotación, los días posteriores aparecen como «sin datos» hasta que la alcaldía publique la siguiente.`,
@@ -22,7 +22,7 @@ export default definePage({
   faqs: [
     { q: '¿Cuántos días al mes tengo pico y placa en Bogotá?', a: `Depende del mes y de tu placa, porque cuenta la paridad de cada fecha hábil. En noviembre de 2026 una placa terminada en 1 tiene ${rows[0][2]} días y una terminada en 6 tiene ${rows[0][3]}. En ciudades con un día fijo por semana, como Medellín o Cali, lo normal son cuatro o cinco días al mes, menos los festivos.` },
     { q: '¿Puedo imprimir el calendario de pico y placa del mes?', a: 'Sí. El botón de imprimir de la herramienta saca la página con el calendario del mes que tengas en pantalla, y el enlace copiado guarda tu ciudad y tu placa para volver a abrirlo. Al imprimir, revisa que el mes elegido esté dentro de la vigencia de la rotación de tu ciudad.' },
-    { q: '¿El calendario incluye el pico y placa de taxis?', a: 'No. El calendario cubre los carros particulares y, donde existe, las motos. Los taxis de Bogotá, Medellín, Itagüí y Cartagena tienen rotaciones propias, a veces quincenales, que publican las secretarías de movilidad en calendarios aparte.' },
+    { q: '¿El calendario incluye el pico y placa de taxis?', a: 'No. El calendario cubre los carros particulares y, donde existe, las motos. Los taxis de Bogotá, Medellín, Itagüí y Cartagena tienen rotaciones propias, a veces quincenales, con horarios distintos a los de los particulares, que las secretarías de movilidad publican en calendarios aparte cada mes. Para un taxi, consulta siempre el calendario oficial de tu ciudad.' },
   ],
   body: (h) => `
 <h2>Leer el calendario</h2>
