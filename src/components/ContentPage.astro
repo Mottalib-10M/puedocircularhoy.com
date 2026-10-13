@@ -54,7 +54,7 @@ const tp = page.toolProps ?? {};
     ) : (
       <>
         <Clamp text={page.resume} lang={lang} id={`clamp-${page.id}`} class="mb-2" />
-        {page.mini && <MiniSim client:load spacing="mb-4 mt-2" kind={page.mini} arg={page.miniArg === undefined ? undefined : JSON.stringify(page.miniArg)} href={miniHref} />}
+        {page.mini && <MiniSim client:load primary spacing="mb-4 mt-2" kind={page.mini} arg={page.miniArg === undefined ? undefined : JSON.stringify(page.miniArg)} href={miniHref} />}
         <p class="mb-8 text-sm text-navy-600">{ui.reviewedBy} <a href={route('about', lang)} class="underline hover:text-navy-900">{AUTHOR_NAME}</a> · <a href={route('editorial', lang)} class="underline hover:text-navy-900">{ui.editorialPolicy}</a> · <a href={methodHref} class="underline hover:text-navy-900">{label('method')}</a></p>
       </>
     )}

@@ -36,7 +36,7 @@ const coPages = PAGES.filter((p) => p.group === 'pyp-ciudad' || p.group === 'pyp
   <header class="mb-3">
     <h1 class="font-serif text-3xl font-bold text-navy-900 md:text-4xl">{x.h1}</h1>
     <p class="mt-2 text-lg text-navy-700">{x.intro}</p>
-    <p class="mt-1 text-sm text-navy-600">Reglas revisadas el <time datetime={LAST_UPDATED}>{fecha(LAST_UPDATED)}</time> en los textos oficiales · <a href={route('method', lang)} class="underline">Cómo calculamos</a> · <a href={route('about', lang)} class="underline">Sobre nosotros</a></p>
+    <p class="mt-1 text-sm text-navy-600">Actualizado el <time datetime={LAST_UPDATED}>{fecha(LAST_UPDATED)}</time> con los textos oficiales · <a href={route('method', lang)} class="underline">Cómo calculamos</a> · <a href={route('about', lang)} class="underline">Sobre nosotros</a></p>
   </header>
   <div data-outil><HomeTool client:load p={{ hnc: MX.hnc }} ciudades={CIUDADES} festivos={FESTIVOS} methodHref={route('method', lang)} calMx={r('calendario-hoy-no-circula')} calCo={r('calendario-pico-y-placa')} contHref={r('contingencia-ambiental')} /></div>
   <Clamp text={x.resume} lang={lang} id="clamp-home" sentences={2} class="my-8" />

@@ -1,6 +1,6 @@
 import type { Locale } from './routes';
 const es = {
-  updatedOn: 'Reglas revisadas el', editorialPolicy: 'Política editorial', contactLabel: 'Contacto', reviewedBy: 'Revisado por',
+  updatedOn: 'Reglas actualizadas el', editorialPolicy: 'Política editorial', contactLabel: 'Contacto', reviewedBy: 'Revisado por',
   skipToContent: 'Ir al contenido', mainNav: 'Navegación principal', breadcrumbLabel: 'Ruta de navegación', breadcrumbHome: 'Inicio', menuOpen: 'Abrir el menú',
   faqTitle: 'Preguntas frecuentes', relatedCalculators: 'Sigue leyendo', sourcesTitle: 'Fuentes oficiales de esta página', writtenBy: 'Publicado por',
   asOf: 'Reglas de circulación', lastUpdated: 'comprobadas en los textos oficiales el', footerValidated: 'Fuentes: SEDEMA, CAMe, Gaceta Oficial de la CDMX, Gobierno del Estado de México y decretos de las alcaldías colombianas',
