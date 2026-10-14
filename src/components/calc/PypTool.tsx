@@ -63,7 +63,7 @@ export default function PypTool({ ciudades, festivos, city = 'bogota', lockCity 
   const digLabel = vehic === 'moto' && c.motos?.digito === 'primero' ? 'Primer número de la placa' : 'Último número de la placa';
   return (
     <div data-chrome className="not-prose grid gap-5 rounded-xl border border-navy-200 bg-white p-4 sm:p-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-      <form className="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         {lockCity ? <LockedField label="Ciudad" value={c.nombre} help={c.depto} /> : <SelectField id={`${idPrefix}-ciudad`} label="Ciudad" value={slug} onChange={setSlug} options={opts} />}
         <SelectField id={`${idPrefix}-placa`} label={digLabel} value={String(digit)} onChange={(x) => setDigit(Number(x))} options={digitOptions(vehic === 'moto' && c.motos?.digito === 'primero' ? 'Empieza en' : 'Termina en')} />
         {c.motos ? <Toggle id={`${idPrefix}-veh`} label="Vehículo" value={vehic} onChange={(x) => setVeh(x as Vehiculo)} options={[{ value: 'carro', label: 'Carro' }, { value: 'moto', label: 'Moto' }]} /> : <LockedField label="Vehículo" value="Carro particular" help={c.motosNota} />}

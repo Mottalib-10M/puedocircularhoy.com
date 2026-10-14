@@ -68,7 +68,7 @@ export default function HncTool({ p, holo: h0 = '1', digit: d0 = 5, methodHref, 
   if (r.d.horas.length) rows.push(['Horario de la restricción', r.d.horas.map(([a, b]) => `${h12(a)} a ${h12(b)} h`).join(' y ')]);
   return (
     <div data-chrome className="not-prose grid gap-5 rounded-xl border border-navy-200 bg-white p-4 sm:p-5 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-      <form className="grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+      <form className="grid content-start grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
         <SelectField id={`${idPrefix}-placa`} label="Último número de la placa" value={String(digit)} onChange={(x) => setDigit(Number(x))} options={digitOptions()} />
         <SelectField id={`${idPrefix}-holo`} label="Holograma de verificación" value={holo} onChange={(x) => setHolo(x as Holo)} options={HOLOS} />
         <Toggle id={`${idPrefix}-cont`} label="¿Contingencia ambiental activa?" value={cont} onChange={(x) => setCont(x as 'no' | '1' | '2')} options={[{ value: 'no', label: 'No' }, { value: '1', label: 'Fase I' }, { value: '2', label: 'Fase II' }]} />
